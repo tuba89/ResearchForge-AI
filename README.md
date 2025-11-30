@@ -89,29 +89,12 @@ ResearchForge democratizes research collaboration, helping academics in underser
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         User Interface                        │
-│              (Modern Web App - Flask + TailwindCSS)          │
-└───────────────────────────┬─────────────────────────────────┘
-                            │
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   Orchestrator Agent                         │
-│              (Routes queries to specialists)                 │
-└─────────────┬───────────────────────────────────────────────┘
-              │
-              ├──────► DataScout (arXiv API + Semantic Scholar)
-              ├──────► MatchEngine (FAISS + ML Embeddings)
-              ├──────► ProposalGenerator (Template Engine)
-              ├──────► OutreachSpecialist (Email Composer)
-              ├──────► ProfileBuilder (Structured Data)
-              ├──────► Explainer (Reasoning Engine)
-              ├──────► MemoryCurator (Preference Learning)
-              └──────► QualityEvaluator (Performance Metrics)
-```
+
+
+ <img src="static/images/ResearchForge_Diagram_dark.png" width="60%" style="max-width: 600px;" alt="Architecture Diagram">
+
 
 ### Technology Stack
 
