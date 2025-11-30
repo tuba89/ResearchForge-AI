@@ -1,0 +1,8 @@
+{
+  "display_name": "ResearchForge AI",
+  "description": "Multi-agent research collaboration platform using A2A protocol",
+  "agent_config": {
+    "name": "ResearchForgeAI",
+    "model": "gemini-2.5-flash"
+  }
+}

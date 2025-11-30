@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ResearchForge AI - AI-powered research collaboration platform">
+    <title>ResearchForge AI | Research Collaboration Platform</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e'
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom gradient background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Glassmorphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Paper card hover effect */
+        .paper-card {
+            transition: all 0.3s ease;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Scrollbar styling */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-flask text-white text-2xl mr-3"></i>
+                    <h1 class="text-white text-2xl font-bold">ResearchForge AI</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#features" class="text-white hover:text-gray-200 transition">Features</a>
+                    <a href="#about" class="text-white hover:text-gray-200 transition">About</a>
+                    <a href="https://github.com" target="_blank" class="text-white hover:text-gray-200 transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-20 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl font-bold mb-6 animate-fade-in">AI-Powered Research Collaboration</h2>
+            <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto animate-slide-up">
+                Discover papers, generate proposals, and accelerate your research with intelligent AI assistance
+            </p>
+            <div class="flex justify-center space-x-4 animate-slide-up">
+                <button onclick="scrollToSearch()"
+                    class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition shadow-lg">
+                    Start Searching
+                </button>
+                <button onclick="scrollToChat()"
+                    class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition">
+                    Try AI Chat
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Features Section -->
+        <section id="features" class="mb-16">
+            <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Powerful Features</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-search text-blue-600 text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Paper Discovery</h4>
+                    <p class="text-gray-600">Search millions of research papers from arXiv with advanced filtering and
+                        AI-powered recommendations</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                    <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-robot text-purple-600 text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">AI Assistant</h4>
+                    <p class="text-gray-600">Chat with an intelligent agent that helps with research tasks, proposals,
+                        and collaboration</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                    <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-file-alt text-green-600 text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Proposal Generator</h4>
+                    <p class="text-gray-600">Generate comprehensive research proposals and collaboration emails with AI
+                        assistance</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section id="search" class="mb-16">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-search text-blue-600 mr-2"></i>
+                    Search Research Papers
+                </h3>
+
+                <div class="mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Search Query</label>
+                            <input type="text" id="searchQuery"
+                                placeholder="e.g., machine learning, quantum computing..."
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                            <select id="searchCategory"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="all">All Categories</option>
+                                <option value="cs.AI">Artificial Intelligence</option>
+                                <option value="cs.LG">Machine Learning</option>
+                                <option value="cs.CV">Computer Vision</option>
+                                <option value="cs.CL">Computational Linguistics</option>
+                                <option value="cs.RO">Robotics</option>
+                                <option value="stat.ML">Statistics ML</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button onclick="searchPapers()"
+                        class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition shadow-lg">
+                        <i class="fas fa-search mr-2"></i>
+                        Search Papers
+                    </button>
+                </div>
+
+                <!-- Loading Indicator -->
+                <div id="searchLoading" class="hidden text-center py-8">
+                    <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                    <p class="text-gray-600 mt-4">Searching arXiv database...</p>
+                </div>
+
+                <!-- Search Results -->
+                <div id="searchResults" class="mt-6"></div>
+            </div>
+        </section>
+
+        <!-- AI Chat Section -->
+        <section id="chat" class="mb-16">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-comments text-purple-600 mr-2"></i>
+                    AI Research Assistant
+                </h3>
+
+                <!-- Chat Messages -->
+                <div id="chatMessages" class="bg-gray-50 rounded-lg p-4 h-96 overflow-y-auto mb-4 custom-scrollbar">
+                    <div class="text-center text-gray-500 mt-20">
+                        <i class="fas fa-sparkles text-6xl mb-4 text-purple-300"></i>
+                        <p>Start a conversation with the AI assistant</p>
+                        <p class="text-sm mt-2">Try: "Find papers about quantum computing" or "Generate a research
+                            proposal"</p>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="flex gap-2">
+                    <input type="text" id="chatInput" placeholder="Ask me anything about research..."
+                        class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        onkeypress="if(event.key === 'Enter') sendMessage()">
+                    <button onclick="sendMessage()"
+                        class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition shadow-lg">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Send
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-12 text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-4">About ResearchForge AI</h3>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
+                ResearchForge AI is an intelligent research collaboration platform powered by Google's Gemini AI.
+                Built with modern web technologies and deployed on Google Cloud, it helps researchers discover papers,
+                generate proposals, and accelerate their research workflow.
+            </p>
+            <div class="flex justify-center space-x-6 text-gray-600">
+                <div>
+                    <i class="fas fa-flask text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-semibold">Built with Google ADK</p>
+                </div>
+                <div>
+                    <i class="fas fa-cloud text-purple-600 text-2xl mb-2"></i>
+                    <p class="font-semibold">Deployed on Google Cloud</p>
+                </div>
+                <div>
+                    <i class="fas fa-brain text-green-600 text-2xl mb-2"></i>
+                    <p class="font-semibold">Powered by Gemini 2.0</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 ResearchForge AI. Built for the Agents Intensive Capstone Project.</p>
+            <p class="mt-2 text-gray-400">Powered by Google Gemini AI & Agent Development Kit</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>
