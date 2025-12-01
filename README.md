@@ -89,6 +89,24 @@ ResearchForge democratizes research collaboration, helping academics in underser
 
 ---
 
+## 📓 Kaggle Notebook
+
+**Full implementation with detailed explanations:**  
+
+[View on Kaggle](https://www.kaggle.com/code/assiaben/researchforge-ai-multi-agent-research-platform)
+
+The notebook includes:
+- Complete agent system implementation (V1 and V2)
+- Interactive demos with real arXiv data
+- Step-by-step explanations
+- Architecture diagrams
+- Performance metrics
+
+**⭐ Please upvote the notebook if you find it helpful!**
+
+---
+
+
 ## 🏗️ System Architecture
 
 
@@ -383,6 +401,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Track**: Agents for Good
 - **Course**: 5-Day AI Agents Intensive (November 2025)
 - **GitHub**: [@tuba89](https://github.com/tuba89)
+
+---
+
+## 👥 Team
+
+**Assia Benkedia** - Lead Developer 
+- LinkedIn: [Assia Benkedia](https://www.linkedin.com/in/assia-benkedia-20708195/)
+
+**Chukwuebuka Okeke** - Contributor
+- LinkedIn: [Chukwuebuka Okeke](https://www.linkedin.com/in/chukwuebuka-okeke-3937b571/)
+
+**Ariamehr Maleki** - Contributor
+- LinkedIn: [Ariamehr Maleki](https://www.linkedin.com/in/ariamehr-maleki/)
+
 
 ---
 
