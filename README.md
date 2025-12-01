@@ -82,12 +82,12 @@ ResearchForge democratizes research collaboration, helping academics in underser
 
 ### Key Concepts Demonstrated
 
-🔷 **Multi-Agent Systems** - 8 specialized agents coordinated by an orchestrator
-🔶 **A2A Protocol** - Agent-to-agent communication via Google ADK
-🟢 **Custom Tools** - Real arXiv API integration, not synthetic data
-🟣 **Session Management*** - Persistent conversations with context
-🔴 **Observability** - Comprehensive logging and metrics tracking
-🟡 **Context Engineering** - Optimized prompts for proactive behavior
+-  **Multi-Agent Systems** - 8 specialized agents coordinated by an orchestrator
+-  **A2A Protocol** - Agent-to-agent communication via Google ADK
+-  **Custom Tools** - Real arXiv API integration, not synthetic data
+-  **Session Management*** - Persistent conversations with context
+-  **Observability** - Comprehensive logging and metrics tracking
+-  **Context Engineering** - Optimized prompts for proactive behavior
 ---
 
 ## 📓 Kaggle Notebook
