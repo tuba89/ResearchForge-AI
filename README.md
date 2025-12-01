@@ -425,7 +425,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ and ⚛️ using Google Gemini & Agent Development Kit**
 
-[⬆ Back to Top](#researchforge-ai-)
+
 [⬆ Back to Top](#top)
 
 </div>
