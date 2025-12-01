@@ -1,5 +1,6 @@
 # ResearchForge AI ⚛️
-![Uploading Gemini_Generated_Image_22f7sm22f7sm22f7.png…]()
+ <img src="static/images/System_Infographics.png" width="60%" style="max-width: 600px;" alt="System Infographics">
+
 
 <a id="top"></a>
 <div align="center">
