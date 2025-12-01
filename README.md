@@ -406,13 +406,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Team
 
-**Assia Benkedia** - Lead Developer 
+**Assia Benkedia** - 
 - LinkedIn: [Assia Benkedia](https://www.linkedin.com/in/assia-benkedia-20708195/)
 
-**Chukwuebuka Okeke** - Contributor
+**Chukwuebuka Okeke** - 
 - LinkedIn: [Chukwuebuka Okeke](https://www.linkedin.com/in/chukwuebuka-okeke-3937b571/)
 
-**Ariamehr Maleki** - Contributor
+**Ariamehr Maleki** -
 - LinkedIn: [Ariamehr Maleki](https://www.linkedin.com/in/ariamehr-maleki/)
 
 
