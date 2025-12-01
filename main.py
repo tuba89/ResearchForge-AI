@@ -8,10 +8,11 @@ import logging
 from flask import Flask, render_template, request, jsonify, session
 from flask_cors import CORS
 from dotenv import load_dotenv
-from google.adk.agents import Agent
-from google.adk.tools import FunctionTool
-from google.adk.runners import Runner
-from google.adk.sessions import InMemorySessionService
+# google-adk imports removed to fix deployment
+# from google.adk.agents import Agent
+# from google.adk.tools import FunctionTool
+# from google.adk.runners import Runner
+# from google.adk.sessions import InMemorySessionService
 from google.genai import types
 import requests
 import xml.etree.ElementTree as ET
@@ -34,10 +35,16 @@ app.secret_key = os.environ.get('SECRET_KEY', os.urandom(24))
 CORS(app)
 
 # Set API key
-os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+# Set API key - ensure it's loaded
+api_key = os.getenv('GOOGLE_API_KEY')
+if not api_key:
+    logger.warning("GOOGLE_API_KEY not found in environment variables")
+else:
+    # Ensure it's in os.environ for libraries that might look for it implicitly
+    os.environ['GOOGLE_API_KEY'] = api_key
 
-# Initialize session service
-session_service = InMemorySessionService()
+# Session service removed
+# session_service = InMemorySessionService()
 
 
 # ============================================================================
@@ -230,30 +237,31 @@ Best regards,
 # AGENT INITIALIZATION
 # ============================================================================
 
-agent = Agent(
-    name="ResearchForgeAI",
-    model="gemini-2.0-flash-exp",
-    description="Multi-agent research collaboration platform for finding papers, researchers, and generating proposals",
-    instruction="""You are ResearchForge AI, an intelligent research collaboration assistant.
-
-Your capabilities:
-1. Search arXiv for research papers (use advanced_arxiv_search)
-2. Generate research proposals (use generate_research_proposal)
-3. Draft collaboration emails (use draft_collaboration_email)
-
-When users ask to:
-- "Find papers" or "search papers" → Use advanced_arxiv_search
-- "Generate proposal" → Use generate_research_proposal
-- "Draft email" → Use draft_collaboration_email
-
-Be proactive, helpful, and use tools immediately with reasonable defaults.
-Always provide clear, organized responses with actionable information.""",
-    tools=[
-        FunctionTool(advanced_arxiv_search),
-        FunctionTool(generate_research_proposal),
-        FunctionTool(draft_collaboration_email)
-    ]
-)
+# Agent initialization removed as it depends on google-adk
+# agent = Agent(
+#     name="ResearchForgeAI",
+#     model="gemini-2.0-flash-exp",
+#     description="Multi-agent research collaboration platform for finding papers, researchers, and generating proposals",
+#     instruction="""You are ResearchForge AI, an intelligent research collaboration assistant.
+# 
+# Your capabilities:
+# 1. Search arXiv for research papers (use advanced_arxiv_search)
+# 2. Generate research proposals (use generate_research_proposal)
+# 3. Draft collaboration emails (use draft_collaboration_email)
+# 
+# When users ask to:
+# - "Find papers" or "search papers" → Use advanced_arxiv_search
+# - "Generate proposal" → Use generate_research_proposal
+# - "Draft email" → Use draft_collaboration_email
+# 
+# Be proactive, helpful, and use tools immediately with reasonable defaults.
+# Always provide clear, organized responses with actionable information.""",
+#     tools=[
+#         FunctionTool(advanced_arxiv_search),
+#         FunctionTool(generate_research_proposal),
+#         FunctionTool(draft_collaboration_email)
+#     ]
+# )
 
 
 # ============================================================================
@@ -335,7 +343,7 @@ def chat():
         client = Client(api_key=os.environ.get('GOOGLE_API_KEY'))
         
         # Create system instruction
-                system_instruction = """You are ResearchForge AI, a PROACTIVE research assistant.
+        system_instruction = """You are ResearchForge AI, a PROACTIVE research assistant.
 
 CRITICAL: When users ask questions, provide IMMEDIATE, COMPLETE answers. DO NOT ask clarifying questions first.
 

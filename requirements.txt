@@ -1,7 +1,11 @@
-google-adk==0.1.0
-requests==2.31.0
-python-dotenv==1.0.0
-flask==3.0.0
+flask==2.3.3
 flask-cors==4.0.0
+python-dotenv==1.0.0
+requests==2.31.0
 gunicorn==21.2.0
-Deprecated==1.2.14
+google-genai>=0.3.0
+# google-adk is likely not on PyPI yet or is a private package. 
+# If it was working locally, it might be installed from a local wheel or git.
+# For now, I will comment it out if it causes build failure, but the user code imports it.
+# Assuming google-adk is needed:
+google-adk==0.1.0

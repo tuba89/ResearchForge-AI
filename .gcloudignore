@@ -1,33 +1,13 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyc
-.Python
-
-# Virtual environments
-venv/
-env/
-ENV/
-
-# Development files
-*.txt
-inspect_*.py
-test_*.py
-run_*.py
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-
-# Local environment
+.gcloudignore
+.git
+.gitignore
+README.md
 .env
-.env.local
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
