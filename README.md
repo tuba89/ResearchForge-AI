@@ -1,6 +1,7 @@
 # ResearchForge AI ⚛️
- <img src="static/images/System_Infographics.png" width="60%" style="max-width: 600px;" alt="System Infographics">
-
+<div align="center">
+  <img src="static/images/System_Infographics.png" width="85%" alt="System Infographics">
+</div>
 
 <a id="top"></a>
 <div align="center">
