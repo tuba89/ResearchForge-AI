@@ -1,5 +1,6 @@
 # ResearchForge AI ⚛️
 
+<a id="top"></a>
 <div align="center">
 
 ![ResearchForge AI](https://img.shields.io/badge/AI-Powered-blue)
@@ -80,13 +81,12 @@ ResearchForge democratizes research collaboration, helping academics in underser
 
 ### Key Concepts Demonstrated
 
-1. ✅ **Multi-Agent Systems** - 8 specialized agents coordinated by an orchestrator
-2. ✅ **A2A Protocol** - Agent-to-agent communication via Google ADK
-3. ✅ **Custom Tools** - Real arXiv API integration, not synthetic data
-4. ✅ **Session Management** - Persistent conversations with context
-5. ✅ **Observability** - Comprehensive logging and metrics tracking
-6. ✅ **Context Engineering** - Optimized prompts for proactive behavior
-
+🔷 **Multi-Agent Systems** - 8 specialized agents coordinated by an orchestrator
+🔶 **A2A Protocol** - Agent-to-agent communication via Google ADK
+🟢 **Custom Tools** - Real arXiv API integration, not synthetic data
+🟣 **Session Management*** - Persistent conversations with context
+🔴 **Observability** - Comprehensive logging and metrics tracking
+🟡 **Context Engineering** - Optimized prompts for proactive behavior
 ---
 
 ## 📓 Kaggle Notebook
@@ -425,5 +425,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Made with ❤️ and ⚛️ using Google Gemini & Agent Development Kit**
 
 [⬆ Back to Top](#researchforge-ai-)
+[⬆ Back to Top](#top)
 
 </div>
