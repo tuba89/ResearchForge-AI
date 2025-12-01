@@ -20,7 +20,7 @@
 
 **ResearchForge AI** is an intelligent multi-agent system that automates the entire research collaboration lifecycle. We transform a process that typically takes researchers **months** of manual effort into a seamless, **minute-long conversation**. By coordinating eight specialized AI agents, ResearchForge finds relevant papers, identifies ideal collaborators using ML-powered matching, and generates professional proposals and outreach emails—all through a natural language interface.
 
-Built for the **5-Day AI Agents Intensive** capstone project, it demonstrates advanced Agent-to-Agent (A2A) communication, real-world API integration, and production-ready deployment.
+Built for the **5-Day AI Agents Intensive** [capstone project](https://www.kaggle.com/competitions/agents-intensive-capstone-project), it demonstrates advanced Agent-to-Agent (A2A) communication, real-world API integration, and production-ready deployment.
 
 ### 🎯 The Problem
 
