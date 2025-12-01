@@ -10,7 +10,7 @@
 
 **Multi-agent research collaboration platform built with Google Gemini & Agent Development Kit**
 
-[Live Demo](#) | [Features](#-features) | [Installation](#-installation) | [Competition Track](#-competition-track)
+[Live Demo](https://researchforge-112206130932.us-central1.run.app/) | [Features](#-features) | [Installation](#-installation) | [Competition Track](#-competition-track)
 
 </div>
 
