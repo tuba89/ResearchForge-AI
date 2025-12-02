@@ -45,7 +45,45 @@ A sophisticated multi-agent system where each agent has a specialized role:
 
 An **Orchestrator** agent intelligently routes requests to the right specialist, enabling complex workflows like: *"Search for papers on medical imaging, find me the top 3 collaborators, and draft a proposal."*
 
+## 🧠 How A2A Works (Simple Visual Trace)
+
+
+👤 **User Query**  
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
+⚡ **Orchestrator** → routes request to relevant agents  
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
+
+1. 🕵️‍♀️ **DataScout** → finds papers  
+2. 👤 **ProfileBuilder** → creates profiles  
+3. 💞 **MatchEngine** → ML matching  
+4. 👩🏫 **Explainer** → match analysis  
+5. ⭐ **QualityEvaluator** → quality check  
+6. 👨💻 **ProposalGenerator** → builds proposal  
+7. 👩💼 **OutreachAgent** → drafts email  
+8. 🧠 **MemoryCurator** → saves preferences  
+
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
+📋 **Combined output from all 8 agents → 👤 User**
+
 ---
+
+## 🆚 ResearchForge AI vs ChatGPT
+
+While ChatGPT is a powerful language model, ResearchForge AI extends its capabilities through real data pipelines, agent-to-agent communication, and ML-powered analysis.  
+The comparison below highlights the functional differences:
+
+| Capability | ChatGPT Alone | ResearchForge AI |
+|-----------|----------------|-------------------|
+| Paper search | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> cannot access real APIs |  <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> live arXiv + researcher data |
+| Verifiable citations | <img width="12" height="12" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> may generate fabricated references | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> real paper IDs + metadata |
+| Persistent memory | <img width="12" height="12" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> limited across turns |  <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> session-level memory curator |
+| Matching collaborators | <img width="12" height="12" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> no embeddings or FAISS |  <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> ML similarity + scoring |
+| Agent collaboration | <img width="12" height="12" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> single-model reasoning only |  <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> eight autonomous agents using A2A |
+| Proposal generation |  <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> generic text generation |  <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> proposals built from real retrieved sources |
+| End-to-end workflow | <img width="12" height="12" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> requires manual steps |  <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> fully automated research pipeline |
+
+**ResearchForge AI operates as a full platform, not just a model prompt.  
+ChatGPT serves as one component inside a broader, intelligent system.**
 
 ## ✨ Features
 
