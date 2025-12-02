@@ -14,7 +14,11 @@
 
 **Multi-agent research collaboration platform built with Google Gemini & Agent Development Kit**
 
-[Live Demo](https://researchforge-112206130932.us-central1.run.app/) | [Features](#-features) | [Installation](#-installation) | [Competition Track](#-competition-track)
+| [Features](#-features) | [Installation](#-installation) | [Competition Track](#-competition-track) |
+
+⚛️ [ Try Live Demo](https://researchforge-112206130932.us-central1.run.app/) • 
+📖 [ Read Blog](https://medium.com/@iiiassia.beniii/building-researchforge-ai-how-we-created-a-multi-agent-system-to-revolutionize-research-b1ab0f21af4f) • 
+💻 [ Kaggle Notebook](https://www.kaggle.com/code/assiaben/researchforge-ai)
 
 </div>
 
