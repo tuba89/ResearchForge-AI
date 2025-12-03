@@ -69,6 +69,8 @@ An **Orchestrator** agent intelligently routes requests to the right specialist,
 &nbsp;&nbsp;&nbsp;&nbsp;↓  
 📋 **Combined output from all 8 agents → 👤 User**
 
+<img src="https://i.ibb.co/b5Thdgvr/How-It-Works.png" width="100%" alt="Agents Diagram">
+
 ---
 
 ## 🆚 ResearchForge AI vs ChatGPT
@@ -156,7 +158,7 @@ The notebook includes:
 
 
 
- <img src="static/images/ResearchForge_Diagram_dark.png" width="60%" style="max-width: 600px;" alt="Architecture Diagram">
+ <img src="static/images/ResearchForge_Diagram_dark.png" width="50%" style="max-width: 500px;" alt="Architecture Diagram">
 
 
 ### Technology Stack
