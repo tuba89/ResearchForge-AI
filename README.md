@@ -443,11 +443,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**Built by Assia** for the Agents Intensive Capstone Project
-
+## 📧 Contact
+**Built by Assia, Ariamehr and Chukwuebuka** for the Agents Intensive Capstone Project
 - **Track**: Agents for Good
-- **Course**: 5-Day AI Agents Intensive (November 2025)
-- **GitHub**: [@tuba89](https://github.com/tuba89)
+- **Course**: [5-Day AI Agents Intensive](https://www.kaggle.com/learn-guide/5-day-agents) (November 2025)
+- **GitHub**: [@tuba89](https://github.com/tuba89) | [@Ariamehr-Maleki](https://github.com/Ariamehr-Maleki) | [@ExploHealth](https://github.com/ExploHealth)
 
 ---
 
