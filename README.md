@@ -51,24 +51,6 @@ An **Orchestrator** agent intelligently routes requests to the right specialist,
 
 ## 🧠 How A2A Works (Simple Visual Trace)
 
-
-👤 **User Query**  
-&nbsp;&nbsp;&nbsp;&nbsp;↓  
-⚡ **Orchestrator** → routes request to relevant agents  
-&nbsp;&nbsp;&nbsp;&nbsp;↓  
-
-1. 🕵️‍♀️ **DataScout** → finds papers  
-2. 👤 **ProfileBuilder** → creates profiles  
-3. 💞 **MatchEngine** → ML matching  
-4. 👩🏫 **Explainer** → match analysis  
-5. ⭐ **QualityEvaluator** → quality check  
-6. 👨💻 **ProposalGenerator** → builds proposal  
-7. 👩💼 **OutreachAgent** → drafts email  
-8. 🧠 **MemoryCurator** → saves preferences  
-
-&nbsp;&nbsp;&nbsp;&nbsp;↓  
-📋 **Combined output from all 8 agents → 👤 User**
-
 <img src="https://i.ibb.co/b5Thdgvr/How-It-Works.png" width="100%" alt="Agents Diagram">
 
 ---
@@ -118,38 +100,68 @@ ChatGPT serves as one component inside a broader, intelligent system.**
 - Smooth animations and transitions
 - Dark mode code blocks with syntax highlighting
 
+## 📸 Screenshots
+
+### Hero Section
+
+<img src="static/images/screenshots/hero_section.png" width="60%" style="max-width: 600px;" alt="Hero Section">
+_Modern landing page with gradient design and intelligent agent orchestration_
+
+
+### AI Chat Interface
+
+<img src="static/images/screenshots/chat_interface.png" width="60%" style="max-width: 600px;" alt="Chat Interface">
+_Real-time research assistant powered by 8 specialized AI agents_
+
+
+### Search & Export Features
+<img src="static/images/screenshots/search_export.png" width="60%" style="max-width: 600px;" alt="Search and Export">
+_Advanced paper search with BibTeX export and automatic search history_
+
 ---
 
-## 🏆 Competition Track
+## 🏆 Competition: Agents for Good
 
-**Agents for Good** - Education & Research
+**Track:** Education & Research  
+**Competition:** [5-Day AI Agents Intensive Capstone](https://www.kaggle.com/competitions/agents-intensive-capstone-project)  
+**Course:** [Google Kaggle AI Agents Intensive](https://www.kaggle.com/learn-guide/5-day-agents)
 
-ResearchForge democratizes research collaboration, helping academics in underserved institutions access the same opportunities as those at elite universities. By automating the tedious parts of collaboration, we enable researchers to focus on what matters: advancing human knowledge.
+### Why "Agents for Good"?
+
+ResearchForge **democratizes research collaboration**:
+
+<img width="16" height="16" alt="image" src="https://github.com/user-attachments/assets/78c16424-a06e-422c-b2d7-fae9a2973d27" /> Helps researchers at **underserved institutions** access elite collaboration opportunities  
+<img width="16" height="16" alt="image" src="https://github.com/user-attachments/assets/78c16424-a06e-422c-b2d7-fae9a2973d27" /> **Reduces barriers** to international collaboration  
+<img width="16" height="16" alt="image" src="https://github.com/user-attachments/assets/78c16424-a06e-422c-b2d7-fae9a2973d27" /> **Automates tedious logistics** so researchers focus on discovery  
+<img width="16" height="16" alt="image" src="https://github.com/user-attachments/assets/78c16424-a06e-422c-b2d7-fae9a2973d27" /> **Accelerates scientific progress** through better matching
 
 ### Key Concepts Demonstrated
 
--  **Multi-Agent Systems** - 8 specialized agents coordinated by an orchestrator
--  **A2A Protocol** - Agent-to-agent communication via Google ADK
--  **Custom Tools** - Real arXiv API integration, not synthetic data
--  **Session Management*** - Persistent conversations with context
--  **Observability** - Comprehensive logging and metrics tracking
--  **Context Engineering** - Optimized prompts for proactive behavior
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **Multi-Agent Systems**: 8 specialized agents + orchestrator
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **A2A Protocol**: Agent-to-agent communication via Google ADK
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **Real-World Integration**: Live arXiv API, not synthetic data
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **ML-Powered Tools**: FAISS vector search + semantic embeddings
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **Context Engineering**: Proactive agent behaviors and memory
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **Production Deployment**: Google Cloud with 100+ concurrent users
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **Observability**: Comprehensive logging and performance metrics
+
 ---
 
 ## 📓 Kaggle Notebook
 
-**Full implementation with detailed explanations:**  
-
-[View on Kaggle](https://www.kaggle.com/code/assiaben/researchforge-ai-multi-agent-research-platform)
+**[View Complete Implementation on Kaggle →](https://www.kaggle.com/code/assiaben/researchforge-ai)**
 
 The notebook includes:
-- Complete agent system implementation (V1 and V2)
-- Interactive demos with real arXiv data
-- Step-by-step explanations
-- Architecture diagrams
-- Performance metrics
 
-**⭐ Please upvote the notebook if you find it helpful!**
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Full agent system code (V1 and V2 implementations)
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Interactive demos with real arXiv data
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Step-by-step explanations of each agent
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Architecture diagrams and visualizations
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Performance metrics and validation tests
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Context extraction and memory demonstrations
+
+**⭐ Please upvote if you find it helpful!**
+
 
 ---
 
@@ -299,13 +311,17 @@ PORT=8080
 
 ### API Endpoints
 
-| Endpoint | Method | Description | Request Body |
-|----------|--------|-------------|--------------|
-| `/` | GET | Main application page | - |
-| `/api/search` | POST | Search research papers | `{"query": "ML", "category": "cs.AI", "max_results": 10}` |
-| `/api/chat` | POST | Chat with AI agent | `{"message": "Find papers", "session_id": "optional"}` |
-| `/api/health` | GET | Health check | - |
-
+| Endpoint              | Method | Description             |
+| --------------------- | ------ | ----------------------- |
+| `/`                   | GET    | Main application UI     |
+| `/api/search`         | POST   | Search arXiv papers     |
+| `/api/chat`           | POST   | Chat with AI agents     |
+| `/api/export-bibtex`  | POST   | Export papers to BibTeX |
+| `/api/search-history` | GET    | Get search history      |
+| `/api/search-history` | POST   | Save search             |
+| `/api/search-history` | DELETE | Clear history           |
+| `/api/health`         | GET    | Health check            |
+| `/api/agent-status`   | GET    | Agent status            |
 ---
 
 ## 📚 Usage Examples
@@ -341,33 +357,59 @@ curl -X POST http://localhost:8080/api/chat \
   }'
 ```
 
+**Example: Export to BibTeX**
+```bash
+curl -X POST http://localhost:8080/api/export-bibtex \\
+-H "Content-Type: application/json" \\
+-d '{
+"papers": [
+{
+"title": "Attention Is All You Need",
+"authors": ["Vaswani et al."],
+"arxiv_id": "1706.03762",
+"published": "2017-06-12",
+"abstract": "The dominant sequence transduction models..."
+}
+]
+}'
+```
+
 ---
 
 ## 🎯 Project Structure
 
 ```
+
 ResearchForge-AI/
-├── app.py                          # Main Flask application
-├── agent.py                        # Agent definitions (legacy)
-├── test_agent.py                   # Local testing script
-├── requirements.txt                # Python dependencies
-├── .env.template                   # Environment variables template
-├── .gitignore                      # Git ignore rules
+├── main.py                               # Flask app with search history API
+├── agent.py                              # 8 agents + BibTeX export
+├── chat_interface.py                     # Session management
+├── requirements.txt                      # Python dependencies
+├── .env.template                         # Environment template
+├── .gitignore                            # Git ignore rules
 │
 ├── templates/
-│   └── index.html                  # Main HTML interface
+│ └── index.html                          # UI with export & history
 │
 ├── static/
-│   ├── images/
-│   │   └── favicon.png             # ⚛️ App icon
-│   └── js/
-│       └── app.js                  # Frontend JavaScript
+│ ├── images/
+│ │ ├── screenshots/                      #  App screenshots
+│ │ │ ├── hero_section.png
+│ │ │ ├── chat_interface.png
+│ │ │ └── search_export.png
+│ │ ├── System_Infographics.png
+│ │ └── ResearchForge_Diagram_dark.png
+│ ├── css/
+│ │ └── agent-dashboard.css                # Gradient animations
+│ └── js/
+│ └── app.js                               # Export & history logic
 │
 ├── docs/
-│   ├── DEPLOY.md                   # Deployment guide
-│   └── CONTRIBUTING.md             # Contribution guidelines
+│ ├── DEPLOY.md
+│ └── CONTRIBUTING.md
 │
-└── README.md                       # This file
+└── README.md
+
 ```
 
 ---
