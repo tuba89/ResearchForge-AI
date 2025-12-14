@@ -1,9 +1,5 @@
 # ResearchForge AI ⚛️
 
-<div align="center">
-  <img src="static/images/System_Infographics.png" width="85%" alt="ResearchForge AI System Overview">
-</div>
-
 <a id="top"></a>
 
 <div align="center">
@@ -16,9 +12,7 @@
 
 **Multi-Agent Research Collaboration Platform Built with Google Gemini & Agent Development Kit**
 
-[🚀 Live Demo](https://researchforge-112206130932.us-central1.run.app/) •
-[📖 Blog Post](https://medium.com/@iiiassia.beniii/building-researchforge-ai-how-we-created-a-multi-agent-system-to-revolutionize-research-b1ab0f21af4f) •
-[💻 Kaggle Notebook](https://www.kaggle.com/code/assiaben/researchforge-ai)
+[Live Demo](https://researchforge-112206130932.us-central1.run.app/) | [Features](#-features) | [Installation](#-installation) | [Competition Track](#-competition-track)
 
 </div>
 
@@ -38,60 +32,67 @@ Our intelligent multi-agent system automates the entire research collaboration w
 
 All through natural language—just tell ResearchForge what you need.
 
-Built for the **[5-Day AI Agents Intensive Capstone Project](https://www.kaggle.com/competitions/agents-intensive-capstone-project)**, competing in the **Agents for Good** track (Education & Research).
+Built for the **5-Day AI Agents Intensive** capstone project, it demonstrates advanced Agent-to-Agent (A2A) communication, real-world API integration, and production-ready deployment.
+
+### 🎯 The Problem
+
+Researchers waste countless hours on the logistics of collaboration instead of doing the research itself. Manually sifting through academic databases, assessing potential partners, and drafting proposals is slow, inefficient, and limits the scale and diversity of potential collaborations.
+
+### 💡 Our Solution
+
+A sophisticated multi-agent system where each agent has a specialized role:
+
+- **DataScout**: Finds real papers via live arXiv API
+- **ProfileBuilder**: Constructs structured researcher profiles
+- **MatchEngine**: Uses FAISS + Sentence Transformers for ML-powered matching
+- **Explainer**: Provides clear reasoning behind recommendations
+- **ProposalGenerator**: Creates funding-ready research proposals
+- **OutreachSpecialist**: Drafts personalized collaboration emails
+- **MemoryCurator**: Learns user preferences over time
+- **QualityEvaluator**: Assesses match quality and system performance
+
+An **Orchestrator** agent intelligently routes requests to the right specialist, enabling complex workflows like: _"Search for papers on medical imaging, find me the top 3 collaborators, and draft a proposal."_
+
+## 🧠 How A2A Works (Simple Visual Trace)
+
+👤 **User Query**  
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
+⚡ **Orchestrator** → routes request to relevant agents  
+&nbsp;&nbsp;&nbsp;&nbsp;↓
+
+1. 🕵️‍♀️ **DataScout** → finds papers
+2. 👤 **ProfileBuilder** → creates profiles
+3. 💞 **MatchEngine** → ML matching
+4. 👩🏫 **Explainer** → match analysis
+5. ⭐ **QualityEvaluator** → quality check
+6. 👨💻 **ProposalGenerator** → builds proposal
+7. 👩💼 **OutreachAgent** → drafts email
+8. 🧠 **MemoryCurator** → saves preferences
+
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
+📋 **Combined output from all 8 agents → 👤 User**
+
+<img src="https://i.ibb.co/b5Thdgvr/How-It-Works.png" width="100%" alt="Agents Diagram">
 
 ---
 
-## 🎯 The Problem We Solve
+## 🆚 ResearchForge AI vs ChatGPT
 
-Academic collaboration is broken:
+While ChatGPT is a powerful language model, ResearchForge AI extends its capabilities through real data pipelines, agent-to-agent communication, and ML-powered analysis.  
+The comparison below highlights the functional differences:
 
-<img width="13" height="13" alt="image" src="https://github.com/user-attachments/assets/d703c433-4c18-47be-96d7-49dd0e34adb6" /> **Manual paper searching** across databases  
-<img width="13" height="13" alt="image" src="https://github.com/user-attachments/assets/d703c433-4c18-47be-96d7-49dd0e34adb6" /> **Time-consuming partner identification**  
-<img width="13" height="13" alt="image" src="https://github.com/user-attachments/assets/d703c433-4c18-47be-96d7-49dd0e34adb6" /> **Generic proposal templates** that need heavy customization  
-<img width="13" height="13" alt="image" src="https://github.com/user-attachments/assets/d703c433-4c18-47be-96d7-49dd0e34adb6" /> **Cold email outreach** with low response rates  
-<img width="13" height="13" alt="image" src="https://github.com/user-attachments/assets/d703c433-4c18-47be-96d7-49dd0e34adb6" /> **Limited collaboration** beyond immediate networks
+| Capability             | ChatGPT Alone                                                                                                                                                       | ResearchForge AI                                                                                                                                                             |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Paper search           | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> cannot access real APIs            | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> live arXiv + researcher data                |
+| Verifiable citations   | <img width="12" height="12" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> may generate fabricated references | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> real paper IDs + metadata                   |
+| Persistent memory      | <img width="12" height="12" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> limited across turns               | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> session-level memory curator                |
+| Matching collaborators | <img width="12" height="12" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> no embeddings or FAISS             | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> ML similarity + scoring                     |
+| Agent collaboration    | <img width="12" height="12" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> single-model reasoning only        | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> eight autonomous agents using A2A           |
+| Proposal generation    | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> generic text generation            | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> proposals built from real retrieved sources |
+| End-to-end workflow    | <img width="12" height="12" alt="image" src="https://github.com/user-attachments/assets/c8219bfa-ae2a-4bba-8b31-f79ff7869b62" /> requires manual steps              | <img width="11" height="11" alt="image" src="https://github.com/user-attachments/assets/3dc6bc90-0405-4ef4-bdec-027b5612daa9" /> fully automated research pipeline           |
 
-**Result:** Researchers spend more time on logistics than actual research.
-
----
-
-## 💡 Our Solution: 8 Specialized AI Agents
-
-Instead of one generic chatbot, ResearchForge coordinates **8 specialized agents**, each expert in one task:
-
-| Agent                     | Role             | What It Does                                               |
-| ------------------------- | ---------------- | ---------------------------------------------------------- |
-| 🕵️ **DataScout**          | Paper Discovery  | Searches real arXiv papers using live API                  |
-| 👤 **ProfileBuilder**     | Profile Creation | Builds structured researcher profiles from papers or names |
-| 🤝 **MatchEngine**        | ML Matching      | Uses FAISS + embeddings to find ideal collaborators        |
-| 💡 **Explainer**          | Reasoning        | Explains why matches work with detailed analysis           |
-| ⭐ **QualityEvaluator**   | Assessment       | Evaluates match quality with confidence scores             |
-| 📝 **ProposalGenerator**  | Proposal Writing | Creates funding-ready research proposals                   |
-| ✉️ **OutreachSpecialist** | Email Drafting   | Writes personalized collaboration emails                   |
-| 🧠 **MemoryCurator**      | Context Memory   | Remembers preferences across conversation                  |
-
-**Plus an Orchestrator** that intelligently routes your requests to the right agents.
-
----
-
-## 💎 What Makes ResearchForge Different?
-
-| Feature            | Traditional Chatbots     | ResearchForge AI                    |
-| ------------------ | ------------------------ | ----------------------------------- |
-| **Data Source**    | Hallucinated/outdated    | ✅ Live arXiv API                   |
-| **Citations**      | May fabricate references | ✅ Real arXiv IDs + PDFs            |
-| **Matching**       | Text-based suggestions   | ✅ ML-powered (FAISS + embeddings)  |
-| **Memory**         | Forgets after session    | ✅ Persistent context across turns  |
-| **Agents**         | Single model             | ✅ 8 specialized agents coordinated |
-| **Explainability** | Black-box decisions      | ✅ Shows reasoning for every match  |
-| **Workflow**       | Manual multi-step        | ✅ End-to-end automation            |
-
-**ResearchForge isn't just a chatbot—it's a complete research platform.**
-
----
-
----
+**ResearchForge AI operates as a full platform, not just a model prompt.  
+ChatGPT serves as one component inside a broader, intelligent system.**
 
 ## 🆕 Latest Updates (December 2024)
 
@@ -219,57 +220,50 @@ _Advanced paper search with BibTeX export and automatic search history_
 
 - Beautiful gradient UI with glassmorphism effects
 - Responsive design (mobile, tablet, desktop)
-- Real-time typing indicators and smooth animations
-- Markdown rendering with syntax-highlighted code blocks
+- Real-time typing indicators
+- Smooth animations and transitions
+- Dark mode code blocks with syntax highlighting
 
 ---
 
-### 📥 Export & History
+## 🏆 Competition Track
 
-- **BibTeX Export**: One-click download of search results in `.bib` format for citation managers
-- **Search History**: Automatic tracking of recent searches with timestamps and result counts
-- **Quick Reload**: Click any history entry to instantly re-run that search
-- **Citation Ready**: Perfect for LaTeX, Mendeley, Zotero, EndNote, and other reference managers
-- **Smart Formatting**: Proper author names, arXiv IDs, and complete metadata
+**Agents for Good** - Education & Research
 
-## 📊 Real Performance Data
+ResearchForge democratizes research collaboration, helping academics in underserved institutions access the same opportunities as those at elite universities. By automating the tedious parts of collaboration, we enable researchers to focus on what matters: advancing human knowledge.
 
-From production deployment and comprehensive testing:
+### Key Concepts Demonstrated
 
-```
-⏱️  System Uptime: 3571.84s (~1 hour testing session)
-📈 Total Requests: 62
-🌟 Success Rate: 100.0% (zero failures)
-⚡ Avg Response Time: 4.99s
-
-🤖 Agent Activity:
-   • Orchestrator: 29 calls (coordinates workflow)
-   • DataScout: 14 calls (paper searches)
-   • ProfileBuilder: 4 calls (researcher profiles)
-   • MatchEngine: 3 calls (ML matching)
-   • Explainer: 3 calls (match reasoning)
-   • ProposalGenerator: 3 calls (proposals)
-   • OutreachSpecialist: 4 calls (emails)
-   • QualityEvaluator: 2 calls (assessments)
-
-🔧 External API:
-   • arXiv API: 7 successful requests (verified real data)
-```
-
-**Key Insights:**
-
-- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/ae4cd278-07e8-42af-8be0-8f6a4e62cf7a" /> **100% reliability** across 62 operations
-- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/ae4cd278-07e8-42af-8be0-8f6a4e62cf7a" /> **Sub-5-second responses** for complex queries
-- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/ae4cd278-07e8-42af-8be0-8f6a4e62cf7a" /> **All 8 agents validated** in real workflows
-- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/ae4cd278-07e8-42af-8be0-8f6a4e62cf7a" /> **Live data integration** confirmed
+1. ✅ **Multi-Agent Systems** - 8 specialized agents coordinated by an orchestrator
+2. ✅ **A2A Protocol** - Agent-to-agent communication via Google ADK
+3. ✅ **Custom Tools** - Real arXiv API integration, not synthetic data
+4. ✅ **Session Management** - Persistent conversations with context
+5. ✅ **Observability** - Comprehensive logging and metrics tracking
+6. ✅ **Context Engineering** - Optimized prompts for proactive behavior
 
 ---
 
-## 🏗️ Technical Architecture
+## 📓 Kaggle Notebook
 
-<div align="center">
-  <img src="static/images/ResearchForge_Diagram_dark.png" width="70%" alt="System Architecture">
-</div>
+**Full implementation with detailed explanations:**
+
+[View on Kaggle](https://www.kaggle.com/code/assiaben/researchforge-ai-multi-agent-research-platform)
+
+The notebook includes:
+
+- Complete agent system implementation (V1 and V2)
+- Interactive demos with real arXiv data
+- Step-by-step explanations
+- Architecture diagrams
+- Performance metrics
+
+**⭐ Please upvote the notebook if you find it helpful!**
+
+---
+
+## 🏗️ System Architecture
+
+ <img src="static/images/ResearchForge_Diagram_dark.png" width="60%" style="max-width: 600px;" alt="Architecture Diagram">
 
 ### Technology Stack
 
@@ -575,38 +569,33 @@ This project is licensed under the **MIT License** - see [LICENSE](LICENSE) for 
 - **Google AI** for the 5-Day AI Agents Intensive course and Gemini API
 - **Google Cloud** for deployment infrastructure and credits
 - **arXiv.org** for providing open access to research papers
-- **Kaggle Community** for inspiration and feedback
+- **Semantic Scholar** for researcher data APIs
+
+---
+
+## 📧 Contact
+
+**Built by Assia** for the Agents Intensive Capstone Project
+
+- **Track**: Agents for Good
+- **Course**: 5-Day AI Agents Intensive (November 2025)
+- **GitHub**: [@tuba89](https://github.com/tuba89)
 
 ---
 
 ## 👥 Team
 
-<table>
-  <tr>
-    <td align="center">
-      <b>Assia Benkedia</b><br>
-      Backend & Agent Architecture<br>
-      <a href="https://github.com/tuba89">GitHub</a> • 
-      <a href="https://www.linkedin.com/in/assia-benkedia-20708195/">LinkedIn</a>
-    </td>
-    <td align="center">
-      <b>Chukwuebuka Okeke</b><br>
-      ML Matching & Research<br>
-      <a href="https://github.com/ExploHealth">GitHub</a> • 
-      <a href="https://www.linkedin.com/in/chukwuebuka-okeke-3937b571/">LinkedIn</a>
-    </td>
-    <td align="center">
-      <b>Ariamehr Maleki</b><br>
-      Frontend & UX Design<br>
-      <a href="https://github.com/Ariamehr-Maleki">GitHub</a> • 
-      <a href="https://www.linkedin.com/in/ariamehr-maleki/">LinkedIn</a>
-    </td>
-  </tr>
-</table>
+**Assia Benkedia** - Lead Developer
 
-**Built for:** [5-Day AI Agents Intensive Capstone Project](https://www.kaggle.com/competitions/agents-intensive-capstone-project)  
-**Track:** Agents for Good - Education & Research  
-**Course:** November 2024
+- LinkedIn: [Assia Benkedia](https://www.linkedin.com/in/assia-benkedia-20708195/)
+
+**Chukwuebuka Okeke** - Contributor
+
+- LinkedIn: [Chukwuebuka Okeke](https://www.linkedin.com/in/chukwuebuka-okeke-3937b571/)
+
+**Ariamehr Maleki** - Contributor
+
+- LinkedIn: [Ariamehr Maleki](https://www.linkedin.com/in/ariamehr-maleki/)
 
 ---
 
@@ -616,10 +605,6 @@ This project is licensed under the **MIT License** - see [LICENSE](LICENSE) for 
 
 **Made with ❤️ and ⚛️ using Google Gemini & Agent Development Kit**
 
-[🚀 Try Live Demo](https://researchforge-112206130932.us-central1.run.app/) •
-[📖 Read Blog](https://medium.com/@iiiassia.beniii/building-researchforge-ai-how-we-created-a-multi-agent-system-to-revolutionize-research-b1ab0f21af4f) •
-[💻 View Notebook](https://www.kaggle.com/code/assiaben/researchforge-ai)
-
-[⬆ Back to Top](#top)
+[⬆ Back to Top](#researchforge-ai-)
 
 </div>
