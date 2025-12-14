@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResearchForge AI - Research Paper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .pdf-viewer {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .pdf-controls {
+            background: #f8f9fa;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .pdf-embed {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-box li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .info-box li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .pdf-embed {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>📄 ResearchForge AI Research Paper</h1>
+        <p>A Multi-Agent System for Automated Research Collaboration</p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">
+            Built for the 5-Day AI Agents Intensive Capstone Project
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="pdf-viewer">
+            <div class="pdf-controls">
+                <a href="../Draft - Research Paper.pdf" download class="btn">
+                    📥 Download PDF
+                </a>
+                <a href="../Draft - Research Paper.pdf" target="_blank" class="btn btn-secondary">
+                    🔗 Open in New Tab
+                </a>
+                <a href="https://github.com/tuba89/ResearchForge-AI" class="btn btn-secondary">
+                    💻 View GitHub Repo
+                </a>
+            </div>
+
+            <iframe src="../Draft - Research Paper.pdf" class="pdf-embed" title="ResearchForge AI Research Paper">
+            </iframe>
+        </div>
+
+        <div class="info-box">
+            <h2>📚 About This Paper</h2>
+            <ul>
+                <li><strong>Title:</strong> ResearchForge AI: A Multi-Agent System for Automated Research Collaboration
+                </li>
+                <li><strong>Track:</strong> Agents for Good - Education & Research</li>
+                <li><strong>Competition:</strong> 5-Day AI Agents Intensive Capstone Project</li>
+                <li><strong>Technologies:</strong> Google Gemini, Agent Development Kit (ADK), FAISS, Flask</li>
+                <li><strong>Authors:</strong> Assia Benkedia, Chukwuebuka Okeke, Ariamehr Maleki</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
