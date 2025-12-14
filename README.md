@@ -14,13 +14,18 @@
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38bdf8)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+<!-- ✨ NEW: Research Paper Badges ✨ -->
+[![Research Paper](https://img.shields.io/badge/📄_Research_Paper-Read_Now-success?style=for-the-badge)](https://tuba89.github.io/ResearchForge-AI/docs/paper.html)
+[![Download PDF](https://img.shields.io/badge/📥_Download-PDF-red?style=for-the-badge)](Draft%20-%20Research%20Paper.pdf)
+
 **Multi-agent research collaboration platform built with Google Gemini & Agent Development Kit**
 
-| [Features](#-features) | [Installation](#-installation) | [Competition Track](#-competition-track) |
+| [Features](#-features) | [Installation](#-installation) | [Research Paper](#-research-paper) |
 
 ⚛️ [ Try Live Demo](https://researchforge-112206130932.us-central1.run.app/) •
 📖 [ Read Blog](https://medium.com/@iiiassia.beniii/building-researchforge-ai-how-we-created-a-multi-agent-system-to-revolutionize-research-b1ab0f21af4f) •
-💻 [ Kaggle Notebook](https://www.kaggle.com/code/assiaben/researchforge-ai)
+💻 [ Kaggle Notebook](https://www.kaggle.com/code/assiaben/researchforge-ai) •
+📄 [ Research Paper](https://tuba89.github.io/ResearchForge-AI/docs/paper.html)
 
 </div>
 
@@ -166,6 +171,22 @@ The notebook includes:
 - <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Context extraction and memory demonstrations
 
 **⭐ Please upvote if you find it helpful!**
+
+---
+
+
+## 📄 Research Paper
+
+**Read our full research paper:**
+
+[📖 View Paper Online](https://tuba89.github.io/ResearchForge-AI/docs/paper.html) | [📥 Download PDF](Draft%20-%20Research%20Paper.pdf)
+
+Our paper details:
+- Multi-agent system architecture
+- Agent-to-Agent (A2A) communication protocol
+- ML-powered matching algorithms
+- Real-world deployment and performance metrics
+- Comparison with traditional approaches
 
 ---
 
