@@ -1,35 +1,20 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+# Virtual Environments
+.env
+.env.local
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# C extensions
-*.so
-
-# Distribution / packaging
+# Distribution / Packaging
 .Python
 build/
 develop-eggs/
@@ -76,17 +61,15 @@ cover/
 *.mo
 *.pot
 
-# Django stuff:
+# Django/Flask
 *.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-
-# Flask stuff:
 instance/
 .webassets-cache
 
-# Scrapy stuff:
+# Scrapy
 .scrapy
 
 # Sphinx documentation
@@ -98,6 +81,8 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+*.ipynb
+*.ipynb_checkpoints/
 
 # IPython
 profile_default/
@@ -113,43 +98,28 @@ Pipfile.lock
 poetry.lock
 
 # pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
 .pdm.toml
 .pdm-python
 .pdm-build/
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and others
+# PEP 582
 __pypackages__/
 
-# Celery stuff
+# Celery
 celerybeat-schedule
 celerybeat.pid
 
-# SageMath parsed files
+# SageMath
 *.sage.py
 
-# Environments
-.env
-.env.local
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
+# Spyder
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope
 .ropeproject
 
-# mkdocs documentation
+# mkdocs
 /site
 
 # mypy
@@ -157,13 +127,13 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
-# Pyre type checker
+# Pyre
 .pyre/
 
-# pytype static type analyzer
+# pytype
 .pytype/
 
-# Cython debug symbols
+# Cython
 cython_debug/
 
 # IDEs
@@ -172,15 +142,40 @@ cython_debug/
 *.swp
 *.swo
 *~
+.DS_Store
 
 # OS
-.DS_Store
 Thumbs.db
+.DS_Store
 
-# Project specific
+# Google Cloud
+.gcloud/
+*.json.key
+*-key.json
+service-account*.json
+credentials.json
+
+# Project Specific - Development Files
+test_*.py
+debug_*.py
+inspect_*.py
+integrate_*.py
 *.backup
 *.bak
-GITHUB_PUSH_GUIDE.md
-intelligent_agent_system_for_research_collaboratio.py
-*.ipynb
+*_backup.*
+usage_log.txt
 output.txt
+output.pdf
+
+# Project Specific - Documentation
+GITHUB_PUSH_GUIDE.md
+
+# Project Specific - Notebooks & Exports
+researchforge-ai*.ipynb
+researchforge-ai*.txt
+researchforge-ai*.py
+
+# Project Specific - Temporary HTML
+updated_examples.html
+*_old.html
+*_temp.html

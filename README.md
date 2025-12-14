@@ -1,6 +1,12 @@
 # ResearchForge AI ⚛️
 
 <div align="center">
+  <img src="static/images/System_Infographics.png" width="85%" alt="ResearchForge AI System Overview">
+</div>
+
+<a id="top"></a>
+
+<div align="center">
 
 ![ResearchForge AI](https://img.shields.io/badge/AI-Powered-blue)
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-Ready-green)
@@ -8,122 +14,283 @@
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38bdf8)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-**Multi-agent research collaboration platform built with Google Gemini & Agent Development Kit**
+**Multi-Agent Research Collaboration Platform Built with Google Gemini & Agent Development Kit**
 
-[Live Demo](https://researchforge-112206130932.us-central1.run.app/) | [Features](#-features) | [Installation](#-installation) | [Competition Track](#-competition-track)
+[🚀 Live Demo](https://researchforge-112206130932.us-central1.run.app/) •
+[📖 Blog Post](https://medium.com/@iiiassia.beniii/building-researchforge-ai-how-we-created-a-multi-agent-system-to-revolutionize-research-b1ab0f21af4f) •
+[💻 Kaggle Notebook](https://www.kaggle.com/code/assiaben/researchforge-ai)
 
 </div>
 
 ---
 
-## 🌟 Overview
+## 🌟 What is ResearchForge AI?
 
-**ResearchForge AI** is an intelligent multi-agent system that automates the entire research collaboration lifecycle. We transform a process that typically takes researchers **months** of manual effort into a seamless, **minute-long conversation**. By coordinating eight specialized AI agents, ResearchForge finds relevant papers, identifies ideal collaborators using ML-powered matching, and generates professional proposals and outreach emails—all through a natural language interface.
+**ResearchForge AI** transforms research collaboration from a **months-long manual process** into a **minutes-long conversation**.
 
-Built for the **5-Day AI Agents Intensive** capstone project, it demonstrates advanced Agent-to-Agent (A2A) communication, real-world API integration, and production-ready deployment.
+Our intelligent multi-agent system automates the entire research collaboration workflow:
 
-### 🎯 The Problem
+1. 🔍 Search academic papers from arXiv
+2. 👥 Build researcher profiles
+3. 🤝 Match ideal collaborators using ML
+4. 📝 Generate funding proposals
+5. ✉️ Draft outreach emails
 
-Researchers waste countless hours on the logistics of collaboration instead of doing the research itself. Manually sifting through academic databases, assessing potential partners, and drafting proposals is slow, inefficient, and limits the scale and diversity of potential collaborations.
+All through natural language—just tell ResearchForge what you need.
 
-### 💡 Our Solution
-
-A sophisticated multi-agent system where each agent has a specialized role:
-
-- **DataScout**: Finds real papers via live arXiv API
-- **ProfileBuilder**: Constructs structured researcher profiles
-- **MatchEngine**: Uses FAISS + Sentence Transformers for ML-powered matching
-- **Explainer**: Provides clear reasoning behind recommendations
-- **ProposalGenerator**: Creates funding-ready research proposals
-- **OutreachSpecialist**: Drafts personalized collaboration emails
-- **MemoryCurator**: Learns user preferences over time
-- **QualityEvaluator**: Assesses match quality and system performance
-
-An **Orchestrator** agent intelligently routes requests to the right specialist, enabling complex workflows like: *"Search for papers on medical imaging, find me the top 3 collaborators, and draft a proposal."*
+Built for the **[5-Day AI Agents Intensive Capstone Project](https://www.kaggle.com/competitions/agents-intensive-capstone-project)**, competing in the **Agents for Good** track (Education & Research).
 
 ---
 
-## ✨ Features
+## 🎯 The Problem We Solve
 
-### 🔍 **Smart Paper Discovery**
-- Search millions of research papers from arXiv in real-time
-- Advanced filtering by category (AI, ML, CV, NLP, Robotics, etc.)
-- Instant results with complete metadata (authors, dates, abstracts)
-- Direct PDF downloads and arXiv page links
+Academic collaboration is broken:
 
-### 🤖 **AI Research Assistant**
-- Intelligent chat interface powered by Google Gemini
-- Multi-model fallback system for reliability (gemini-2.0-flash-exp, gemini-2.5-flash-lite, etc.)
-- Context-aware conversations with session management
-- Markdown-formatted responses with beautiful styling
+<img width="13" height="13" alt="image" src="https://github.com/user-attachments/assets/d703c433-4c18-47be-96d7-49dd0e34adb6" /> **Manual paper searching** across databases  
+<img width="13" height="13" alt="image" src="https://github.com/user-attachments/assets/d703c433-4c18-47be-96d7-49dd0e34adb6" /> **Time-consuming partner identification**  
+<img width="13" height="13" alt="image" src="https://github.com/user-attachments/assets/d703c433-4c18-47be-96d7-49dd0e34adb6" /> **Generic proposal templates** that need heavy customization  
+<img width="13" height="13" alt="image" src="https://github.com/user-attachments/assets/d703c433-4c18-47be-96d7-49dd0e34adb6" /> **Cold email outreach** with low response rates  
+<img width="13" height="13" alt="image" src="https://github.com/user-attachments/assets/d703c433-4c18-47be-96d7-49dd0e34adb6" /> **Limited collaboration** beyond immediate networks
 
-### 📝 **Automated Content Generation**
-- Generate comprehensive research proposals in seconds
-- Draft professional collaboration emails
-- Customizable templates with smart defaults
-- Professional formatting and structure
+**Result:** Researchers spend more time on logistics than actual research.
 
-### 🎨 **Modern User Experience**
+---
+
+## 💡 Our Solution: 8 Specialized AI Agents
+
+Instead of one generic chatbot, ResearchForge coordinates **8 specialized agents**, each expert in one task:
+
+| Agent                     | Role             | What It Does                                               |
+| ------------------------- | ---------------- | ---------------------------------------------------------- |
+| 🕵️ **DataScout**          | Paper Discovery  | Searches real arXiv papers using live API                  |
+| 👤 **ProfileBuilder**     | Profile Creation | Builds structured researcher profiles from papers or names |
+| 🤝 **MatchEngine**        | ML Matching      | Uses FAISS + embeddings to find ideal collaborators        |
+| 💡 **Explainer**          | Reasoning        | Explains why matches work with detailed analysis           |
+| ⭐ **QualityEvaluator**   | Assessment       | Evaluates match quality with confidence scores             |
+| 📝 **ProposalGenerator**  | Proposal Writing | Creates funding-ready research proposals                   |
+| ✉️ **OutreachSpecialist** | Email Drafting   | Writes personalized collaboration emails                   |
+| 🧠 **MemoryCurator**      | Context Memory   | Remembers preferences across conversation                  |
+
+**Plus an Orchestrator** that intelligently routes your requests to the right agents.
+
+---
+
+## 💎 What Makes ResearchForge Different?
+
+| Feature            | Traditional Chatbots     | ResearchForge AI                    |
+| ------------------ | ------------------------ | ----------------------------------- |
+| **Data Source**    | Hallucinated/outdated    | ✅ Live arXiv API                   |
+| **Citations**      | May fabricate references | ✅ Real arXiv IDs + PDFs            |
+| **Matching**       | Text-based suggestions   | ✅ ML-powered (FAISS + embeddings)  |
+| **Memory**         | Forgets after session    | ✅ Persistent context across turns  |
+| **Agents**         | Single model             | ✅ 8 specialized agents coordinated |
+| **Explainability** | Black-box decisions      | ✅ Shows reasoning for every match  |
+| **Workflow**       | Manual multi-step        | ✅ End-to-end automation            |
+
+**ResearchForge isn't just a chatbot—it's a complete research platform.**
+
+---
+
+---
+
+## 🆕 Latest Updates (December 2024)
+
+### New Features
+
+- ✅ **BibTeX Export**: Download search results as `.bib` files for citation managers
+- ✅ **Search History**: Automatic tracking with timestamps and paper counts
+- ✅ **Enhanced UI**: Gradient animations and glassmorphism effects
+- ✅ **Bug Fixes**: Resolved search history backend issues
+
+### Coming Soon
+
+- 🔄 Multi-database search (Google Scholar, PubMed)
+- 🔄 Persistent database storage
+- 🔄 Advanced filtering options
+- 🔄 Collaborative workspaces
+
+---
+
+## 🔄 How It Works: Agent Collaboration
+
+```
+👤 User: "Find quantum computing papers and match collaborators"
+      ↓
+🎯 Orchestrator analyzes request → routes to agents
+      ↓
+┌─────────────────────────────────────────────┐
+│  🕵️ DataScout searches arXiv               │
+│  👤 ProfileBuilder creates researcher info  │
+│  🤝 MatchEngine runs ML matching            │
+│  💡 Explainer analyzes why matches work     │
+│  ⭐ QualityEvaluator scores confidence      │
+│  📝 ProposalGenerator writes proposal       │
+│  ✉️ OutreachSpecialist drafts emails        │
+└─────────────────────────────────────────────┘
+      ↓
+📊 Comprehensive result → 👤 User
+```
+
+<div align="center">
+  <img src="https://i.ibb.co/b5Thdgvr/How-It-Works.png" width="100%" alt="Agent Collaboration Diagram">
+</div>
+
+---
+
+## 🎮 Try It Yourself
+
+### Quick Start (3 Steps)
+
+1. **🌐 [Try Live Demo](https://researchforge-112206130932.us-central1.run.app/)** - No installation needed
+2. **💻 [View Kaggle Notebook](https://www.kaggle.com/code/assiaben/researchforge-ai)** - Full implementation with explanations
+3. **⚡ Run Locally** - Clone repo and run in 5 minutes (see [Installation](#-installation))
+
+### Example Queries
+
+Try these in the chat interface:
+
+**🔍 Paper Search:**
+
+- `"Find papers about medical imaging AI"`
+- `"Show me recent quantum computing research"`
+- `"Search for climate change modeling papers"`
+
+**👥 Collaboration:**
+
+- `"Build profiles from: Dr. Alice, Dr. Bob"`
+- `"Match researchers for my quantum project"`
+- `"Explain why Dr. Alice is a good match"`
+
+**📝 Content Generation:**
+
+- `"Generate a research proposal for AI in healthcare"`
+- `"Draft an email to Dr. Alice about collaboration"`
+- `"Evaluate the overall match quality"`
+
+---
+
+## 📸 Screenshots
+
+### Hero Section
+
+![Hero Section](static/images/screenshots/hero_section.png)
+_Modern landing page with gradient design and intelligent agent orchestration_
+
+### AI Chat Interface
+
+![Chat Interface](static/images/screenshots/chat_interface.png)
+_Real-time research assistant powered by 8 specialized AI agents_
+
+### Search & Export Features
+
+![Search and Export](static/images/screenshots/search_export.png)
+_Advanced paper search with BibTeX export and automatic search history_
+
+## ✨ Key Features
+
+### 🔍 Smart Paper Discovery
+
+- Real-time search of **millions of arXiv papers**
+- Smart category detection (medical → cs.CV + q-bio.QM; quantum → quant-ph + physics)
+- Complete metadata: titles, authors, dates, abstracts, **PDF links**
+- Supports **any research field** (not limited to predefined domains)
+
+### 🤝 ML-Powered Matching
+
+- **FAISS vector search** with 384-dimensional embeddings
+- **Multi-factor scoring**: Skills (30%), Interests (35%), Complementary (25%), Collaboration (10%)
+- Partial string matching for interests (works even with slight variations)
+- Handles cross-domain collaborations (e.g., quantum + biology)
+
+### 📝 Professional Content Generation
+
+- **Domain-specific proposals**: Clinical data-driven for medical, quantum algorithms for physics
+- **Realistic outcomes**: FDA-ready tools, peer-reviewed publications, open-source libraries
+- **Complete structure**: Abstract, methodology, timeline, budget, evaluation metrics
+- **Personalized emails**: References researcher expertise and project details
+
+### 🧠 Context-Aware AI
+
+- **Multi-turn memory**: Remembers entire conversation context
+- **Context extraction**: Profiles automatically get research interests from previous queries
+- **Conversation coherence**: No need to repeat information across turns
+
+### 🎨 Modern User Interface
+
 - Beautiful gradient UI with glassmorphism effects
 - Responsive design (mobile, tablet, desktop)
-- Real-time typing indicators
-- Smooth animations and transitions
-- Dark mode code blocks with syntax highlighting
+- Real-time typing indicators and smooth animations
+- Markdown rendering with syntax-highlighted code blocks
 
 ---
 
-## 🏆 Competition Track
+### 📥 Export & History
 
-**Agents for Good** - Education & Research
+- **BibTeX Export**: One-click download of search results in `.bib` format for citation managers
+- **Search History**: Automatic tracking of recent searches with timestamps and result counts
+- **Quick Reload**: Click any history entry to instantly re-run that search
+- **Citation Ready**: Perfect for LaTeX, Mendeley, Zotero, EndNote, and other reference managers
+- **Smart Formatting**: Proper author names, arXiv IDs, and complete metadata
 
-ResearchForge democratizes research collaboration, helping academics in underserved institutions access the same opportunities as those at elite universities. By automating the tedious parts of collaboration, we enable researchers to focus on what matters: advancing human knowledge.
+## 📊 Real Performance Data
 
-### Key Concepts Demonstrated
+From production deployment and comprehensive testing:
 
-1. ✅ **Multi-Agent Systems** - 8 specialized agents coordinated by an orchestrator
-2. ✅ **A2A Protocol** - Agent-to-agent communication via Google ADK
-3. ✅ **Custom Tools** - Real arXiv API integration, not synthetic data
-4. ✅ **Session Management** - Persistent conversations with context
-5. ✅ **Observability** - Comprehensive logging and metrics tracking
-6. ✅ **Context Engineering** - Optimized prompts for proactive behavior
+```
+⏱️  System Uptime: 3571.84s (~1 hour testing session)
+📈 Total Requests: 62
+🌟 Success Rate: 100.0% (zero failures)
+⚡ Avg Response Time: 4.99s
+
+🤖 Agent Activity:
+   • Orchestrator: 29 calls (coordinates workflow)
+   • DataScout: 14 calls (paper searches)
+   • ProfileBuilder: 4 calls (researcher profiles)
+   • MatchEngine: 3 calls (ML matching)
+   • Explainer: 3 calls (match reasoning)
+   • ProposalGenerator: 3 calls (proposals)
+   • OutreachSpecialist: 4 calls (emails)
+   • QualityEvaluator: 2 calls (assessments)
+
+🔧 External API:
+   • arXiv API: 7 successful requests (verified real data)
+```
+
+**Key Insights:**
+
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/ae4cd278-07e8-42af-8be0-8f6a4e62cf7a" /> **100% reliability** across 62 operations
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/ae4cd278-07e8-42af-8be0-8f6a4e62cf7a" /> **Sub-5-second responses** for complex queries
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/ae4cd278-07e8-42af-8be0-8f6a4e62cf7a" /> **All 8 agents validated** in real workflows
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/ae4cd278-07e8-42af-8be0-8f6a4e62cf7a" /> **Live data integration** confirmed
 
 ---
 
-## 📓 Kaggle Notebook
+## 🏗️ Technical Architecture
 
-**Full implementation with detailed explanations:**  
-
-[View on Kaggle](https://www.kaggle.com/code/assiaben/researchforge-ai-multi-agent-research-platform)
-
-The notebook includes:
-- Complete agent system implementation (V1 and V2)
-- Interactive demos with real arXiv data
-- Step-by-step explanations
-- Architecture diagrams
-- Performance metrics
-
-**⭐ Please upvote the notebook if you find it helpful!**
-
----
-
-
-## 🏗️ System Architecture
-
-
-
- <img src="static/images/ResearchForge_Diagram_dark.png" width="60%" style="max-width: 600px;" alt="Architecture Diagram">
-
+<div align="center">
+  <img src="static/images/ResearchForge_Diagram_dark.png" width="70%" alt="System Architecture">
+</div>
 
 ### Technology Stack
 
-| Layer | Technologies |
-|-------|-------------|
-| **AI Models** | Google Gemini 2.0 Flash, Gemini 2.5 Flash Lite |
-| **Backend** | Flask, Google ADK, Python 3.12 |
-| **Frontend** | HTML5, TailwindCSS, Vanilla JavaScript |
-| **ML/AI Tools** | FAISS, SentenceTransformers, arXiv API |
-| **Deployment** | Google Cloud App Engine (optional) |
-| **Observability** | Python logging, structured metrics |
+| Layer               | Technologies                                     |
+| ------------------- | ------------------------------------------------ |
+| **AI Models**       | Google Gemini 2.5 Flash, Gemini 2.0 Flash        |
+| **Agent Framework** | Google Agent Development Kit (ADK)               |
+| **Backend**         | Python 3.11+, Flask 3.0                          |
+| **ML/Search**       | FAISS, SentenceTransformers (384-dim embeddings) |
+| **External APIs**   | arXiv.org (live academic papers)                 |
+| **Frontend**        | HTML5, TailwindCSS 3.0, Vanilla JavaScript       |
+| **Deployment**      | Google Cloud Run / App Engine                    |
+| **Observability**   | Python logging, structured metrics               |
+
+### Key Technical Features
+
+- **Agent-to-Agent (A2A) Protocol**: Agents communicate directly using Google ADK
+- **Multi-Model Fallback**: Automatic failover between Gemini models for reliability
+- **Session Management**: Persistent conversations with context preservation
+- **Vector Search**: FAISS indexing for semantic similarity matching
+- **Real-Time API Integration**: Live arXiv queries, not cached/demo data
 
 ---
 
@@ -131,105 +298,93 @@ The notebook includes:
 
 ### Prerequisites
 
-- Python 3.12+
-- Google API key for Gemini ([Get one here](https://aistudio.google.com/apikey))
-- (Optional) Google Cloud account for deployment
+- **Python 3.11+** (3.11 or 3.12 recommended)
+- **Google API Key** for Gemini ([Get free key here](https://aistudio.google.com/apikey))
+- **(Optional)** Google Cloud account for deployment
 
-### Quick Start
+### Local Setup (5 minutes)
 
 1. **Clone the repository**
 
-```bash
-git clone https://github.com/yourusername/ResearchForge-AI.git
-cd ResearchForge-AI
-```
+   ```bash
+   git clone https://github.com/tuba89/ResearchForge-AI.git
+   cd ResearchForge-AI
+   ```
 
 2. **Create virtual environment**
 
-```bash
-python -m venv venv
+   ```bash
+   python3 -m venv venv
 
-# On macOS/Linux:
-source venv/bin/activate
-
-# On Windows:
-venv\Scripts\activate
-```
+   # Activate:
+   # macOS/Linux:
+   source venv/bin/activate
+   # Windows:
+   venv\Scripts\activate
+   ```
 
 3. **Install dependencies**
 
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-4. **Set up environment variables**
+4. **Configure environment**
 
-```bash
-# Copy template
-cp .env.template .env
+   ```bash
+   # Copy template
+   cp .env.template .env
 
-# Edit .env and add your credentials:
-# GOOGLE_API_KEY=your_api_key_here
-```
+   # Edit .env and add your Gemini API key:
+   # GOOGLE_API_KEY=your_actual_api_key_here
+   ```
 
-5. **Run the application**
+5. **Run locally**
 
-```bash
-python app.py
-```
+   ```bash
+   python app.py
+   ```
 
 6. **Open in browser**
-
-```
-http://localhost:8080
-```
+   ```
+   http://localhost:8080
+   ```
 
 ---
 
 ## 🚀 Deployment
 
-### Option 1: Local/VPS Deployment
+### Option 1: Google Cloud Run (Recommended)
 
 ```bash
-# Production mode
-export FLASK_ENV=production
+# Install Google Cloud SDK
+brew install google-cloud-sdk  # macOS
+# Or: https://cloud.google.com/sdk/docs/install
+
+# Login and set project
+gcloud auth login
+gcloud config set project YOUR_PROJECT_ID
+
+# Deploy
+gcloud run deploy researchforge \
+  --source . \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --set-env-vars GOOGLE_API_KEY=your_key
+```
+
+### Option 2: Local/VPS Production
+
+```bash
+# Install gunicorn
+pip install gunicorn
+
+# Run with multiple workers
 gunicorn -w 4 -b 0.0.0.0:8080 app:app
 ```
 
-### Option 2: Google Cloud App Engine
-
-1. **Install Google Cloud SDK**
-   ```bash
-   # macOS
-   brew install google-cloud-sdk
-   
-   # Or download from: https://cloud.google.com/sdk/docs/install
-   ```
-
-2. **Initialize project**
-   ```bash
-   gcloud init
-   gcloud config set project YOUR_PROJECT_ID
-   ```
-
-3. **Update app.yaml**
-   ```yaml
-   runtime: python312
-   env_variables:
-     GOOGLE_API_KEY: "your-api-key"
-   ```
-
-4. **Deploy**
-   ```bash
-   gcloud app deploy
-   ```
-
-5. **View your app**
-   ```bash
-   gcloud app browse
-   ```
-
-For detailed deployment instructions, see [DEPLOY.md](DEPLOY.md)
+For detailed deployment guide, see **[DEPLOY.md](DEPLOY.md)**
 
 ---
 
@@ -237,193 +392,234 @@ For detailed deployment instructions, see [DEPLOY.md](DEPLOY.md)
 
 ### Environment Variables
 
-Create a `.env` file in the project root:
+Create `.env` file in project root:
 
 ```env
 # Required
-GOOGLE_API_KEY=your_google_api_key_here
+GOOGLE_API_KEY=your_google_gemini_api_key
 
 # Optional
-GOOGLE_CLOUD_PROJECT=your_project_id
-GOOGLE_CLOUD_LOCATION=us-central1
-SECRET_KEY=your_secret_key_for_flask_sessions
 PORT=8080
+SECRET_KEY=random_secret_for_flask_sessions
+GOOGLE_CLOUD_PROJECT=your_gcp_project_id
 ```
 
 ### API Endpoints
 
-| Endpoint | Method | Description | Request Body |
-|----------|--------|-------------|--------------|
-| `/` | GET | Main application page | - |
-| `/api/search` | POST | Search research papers | `{"query": "ML", "category": "cs.AI", "max_results": 10}` |
-| `/api/chat` | POST | Chat with AI agent | `{"message": "Find papers", "session_id": "optional"}` |
-| `/api/health` | GET | Health check | - |
+### API Endpoints
+
+| Endpoint              | Method | Description             |
+| --------------------- | ------ | ----------------------- |
+| `/`                   | GET    | Main application UI     |
+| `/api/search`         | POST   | Search arXiv papers     |
+| `/api/chat`           | POST   | Chat with AI agents     |
+| `/api/export-bibtex`  | POST   | Export papers to BibTeX |
+| `/api/search-history` | GET    | Get search history      |
+| `/api/search-history` | POST   | Save search             |
+| `/api/search-history` | DELETE | Clear history           |
+| `/api/health`         | GET    | Health check            |
+| `/api/agent-status`   | GET    | Agent status            |
+
+**Example: Export to BibTeX**
+\`\`\`bash
+curl -X POST http://localhost:8080/api/export-bibtex \\
+-H "Content-Type: application/json" \\
+-d '{
+"papers": [
+{
+"title": "Attention Is All You Need",
+"authors": ["Vaswani et al."],
+"arxiv_id": "1706.03762",
+"published": "2017-06-12",
+"abstract": "The dominant sequence transduction models..."
+}
+]
+}'
+\`\`\`
 
 ---
 
-## 📚 Usage Examples
+## 🏆 Competition: Agents for Good
 
-### Web Interface
+**Track:** Education & Research  
+**Competition:** [5-Day AI Agents Intensive Capstone](https://www.kaggle.com/competitions/agents-intensive-capstone-project)  
+**Course:** [Google Kaggle AI Agents Intensive](https://www.kaggle.com/learn-guide/5-day-agents)
 
-1. **Search Papers**: Enter keywords like "quantum computing" or "deep learning"
-2. **Chat with AI**: Ask questions like:
-   - "Find papers about medical imaging AI"
-   - "Generate a research proposal for climate change"
-   - "Draft a collaboration email for my project"
+### Why "Agents for Good"?
 
-### API Usage
+ResearchForge **democratizes research collaboration**:
 
-**Search Papers:**
-```bash
-curl -X POST http://localhost:8080/api/search \
-  -H "Content-Type: application/json" \
-  -d '{
-    "query": "transformer models",
-    "category": "cs.CL",
-    "max_results": 5
-  }'
-```
+<img width="16" height="16" alt="image" src="https://github.com/user-attachments/assets/78c16424-a06e-422c-b2d7-fae9a2973d27" /> Helps researchers at **underserved institutions** access elite collaboration opportunities  
+<img width="16" height="16" alt="image" src="https://github.com/user-attachments/assets/78c16424-a06e-422c-b2d7-fae9a2973d27" /> **Reduces barriers** to international collaboration  
+<img width="16" height="16" alt="image" src="https://github.com/user-attachments/assets/78c16424-a06e-422c-b2d7-fae9a2973d27" /> **Automates tedious logistics** so researchers focus on discovery  
+<img width="16" height="16" alt="image" src="https://github.com/user-attachments/assets/78c16424-a06e-422c-b2d7-fae9a2973d27" /> **Accelerates scientific progress** through better matching
 
-**Chat with Agent:**
-```bash
-curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "Find recent papers on reinforcement learning",
-    "session_id": "user-123"
-  }'
-```
+### Key Concepts Demonstrated
+
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **Multi-Agent Systems**: 8 specialized agents + orchestrator
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **A2A Protocol**: Agent-to-agent communication via Google ADK
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **Real-World Integration**: Live arXiv API, not synthetic data
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **ML-Powered Tools**: FAISS vector search + semantic embeddings
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **Context Engineering**: Proactive agent behaviors and memory
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **Production Deployment**: Google Cloud with 100+ concurrent users
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/4ece1f2f-f9a7-4b0d-b7ec-033f7a492b90" /> **Observability**: Comprehensive logging and performance metrics
+
+---
+
+## 📓 Kaggle Notebook
+
+**[View Complete Implementation on Kaggle →](https://www.kaggle.com/code/assiaben/researchforge-ai)**
+
+The notebook includes:
+
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Full agent system code (V1 and V2 implementations)
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Interactive demos with real arXiv data
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Step-by-step explanations of each agent
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Architecture diagrams and visualizations
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Performance metrics and validation tests
+- <img width="15" height="15" alt="image" src="https://github.com/user-attachments/assets/33914868-f3b6-4dd1-9aa4-67ec00e9586f" /> Context extraction and memory demonstrations
+
+**⭐ Please upvote if you find it helpful!**
 
 ---
 
 ## 🎯 Project Structure
 
-```
+\`\`\`
 ResearchForge-AI/
-├── app.py                          # Main Flask application
-├── agent.py                        # Agent definitions (legacy)
-├── test_agent.py                   # Local testing script
-├── requirements.txt                # Python dependencies
-├── .env.template                   # Environment variables template
-├── .gitignore                      # Git ignore rules
+├── main.py # Flask app with search history API
+├── agent.py # 8 agents + BibTeX export
+├── chat_interface.py # Session management
+├── requirements.txt # Python dependencies
+├── .env.template # Environment template
+├── .gitignore # Git ignore rules
 │
 ├── templates/
-│   └── index.html                  # Main HTML interface
+│ └── index.html # UI with export & history
 │
 ├── static/
-│   ├── images/
-│   │   └── favicon.png             # ⚛️ App icon
-│   └── js/
-│       └── app.js                  # Frontend JavaScript
+│ ├── images/
+│ │ ├── screenshots/ # 🆕 App screenshots
+│ │ │ ├── hero_section.png
+│ │ │ ├── chat_interface.png
+│ │ │ └── search_export.png
+│ │ ├── System_Infographics.png
+│ │ └── ResearchForge_Diagram_dark.png
+│ ├── css/
+│ │ └── agent-dashboard.css # Gradient animations
+│ └── js/
+│ └── app.js # Export & history logic
 │
 ├── docs/
-│   ├── DEPLOY.md                   # Deployment guide
-│   └── CONTRIBUTING.md             # Contribution guidelines
+│ ├── DEPLOY.md
+│ └── CONTRIBUTING.md
 │
-└── README.md                       # This file
-```
+└── README.md
+\`\`\`
 
 ---
 
-## 🧪 Testing
+## 🧪 Validated System Tests
 
-### Run Local Tests
+All 8 agents tested with real arXiv data. See **[Kaggle Notebook](https://www.kaggle.com/code/assiaben/researchforge-ai)** for complete test results.
 
-```bash
-# Test agent functionality
-python test_agent.py
+**Test Workflow: Medical Imaging AI Collaboration**
 
-# Test API endpoints
-python -m pytest tests/
-```
-
-### Test Queries
-
-Try these in the chat interface:
-1. "Find papers about transformer models in NLP"
-2. "Generate a proposal for AI in education"
-3. "Draft an email for my healthcare AI project"
+| Agent              | Query Example                                                | Result                                         |
+| ------------------ | ------------------------------------------------------------ | ---------------------------------------------- |
+| DataScout          | "Find papers about deep learning in medical imaging"         | ✅ 10 papers with PDF links                    |
+| ProfileBuilder     | "Build profiles from: Dr. Sarah Chen, Dr. Michael Rodriguez" | ✅ Context: "Deep Learning In Medical Imaging" |
+| MatchEngine        | "Match researchers for AI-powered diagnostic imaging"        | ✅ 68/100 score (75% skills, 100% interests)   |
+| Explainer          | "Explain why Dr. Sarah Chen is a good match"                 | ✅ Detailed analysis with actionable steps     |
+| QualityEvaluator   | "Evaluate the overall match quality"                         | ✅ Confidence scores provided                  |
+| ProposalGenerator  | "Generate a research proposal"                               | ✅ Domain-specific, funding-ready              |
+| OutreachSpecialist | "Draft an email to Dr. Sarah Chen"                           | ✅ Personalized, professional                  |
+| MemoryCurator      | _(Implicit validation)_                                      | ✅ Context maintained across 7 turns           |
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how to get started:
+We welcome contributions! To get started:
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create a feature branch: `git checkout -b feature/AmazingFeature`
+3. Make your changes and test thoroughly
+4. Commit: `git commit -m 'Add AmazingFeature'`
+5. Push: `git push origin feature/AmazingFeature`
+6. Open a Pull Request
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
-
----
-
-## 🐛 Known Issues & Limitations
-
-- **API Rate Limits**: Free Gemini API has rate limits; multi-model fallback helps
-- **arXiv Scope**: Only searches arXiv (not all academic databases)
-- **Session Persistence**: In-memory sessions (lost on restart)
-
-See [Issues](https://github.com/tuba89/ResearchForge-AI/issues) for planned improvements.
+See **[CONTRIBUTING.md](CONTRIBUTING.md)** for detailed guidelines.
 
 ---
 
-## 📊 Performance
+## 🐛 Known Limitations
 
-- **Paper Search**: < 2 seconds (arXiv API)
-- **AI Response**: 2-5 seconds (Gemini API)
-- **Proposal Generation**: < 3 seconds
-- **Concurrent Users**: 100+ (with gunicorn)
+- **API Rate Limits**: Free Gemini API has limits; system includes multi-model fallback
+- **arXiv Only**: Currently only searches arXiv (not Google Scholar, PubMed, etc.)
+- **Session Storage**: Uses in-memory sessions (reset on server restart)
+- **Demo Researchers**: Some test data included for demonstration
+
+**Planned improvements** tracked in [GitHub Issues](https://github.com/tuba89/ResearchForge-AI/issues)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see [LICENSE](LICENSE) for details.
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Google AI** for the 5-Day Agents Intensive course
-- **Google Gemini** team for the incredible AI capabilities
+- **Google AI** for the 5-Day AI Agents Intensive course and Gemini API
+- **Google Cloud** for deployment infrastructure and credits
 - **arXiv.org** for providing open access to research papers
-- **Semantic Scholar** for researcher data APIs
-
----
-
-## 📧 Contact
-
-**Built by Assia** for the Agents Intensive Capstone Project
-
-- **Track**: Agents for Good
-- **Course**: 5-Day AI Agents Intensive (November 2025)
-- **GitHub**: [@tuba89](https://github.com/tuba89)
+- **Kaggle Community** for inspiration and feedback
 
 ---
 
 ## 👥 Team
 
-**Assia Benkedia** - Lead Developer 
-- LinkedIn: [Assia Benkedia](https://www.linkedin.com/in/assia-benkedia-20708195/)
+<table>
+  <tr>
+    <td align="center">
+      <b>Assia Benkedia</b><br>
+      Backend & Agent Architecture<br>
+      <a href="https://github.com/tuba89">GitHub</a> • 
+      <a href="https://www.linkedin.com/in/assia-benkedia-20708195/">LinkedIn</a>
+    </td>
+    <td align="center">
+      <b>Chukwuebuka Okeke</b><br>
+      ML Matching & Research<br>
+      <a href="https://github.com/ExploHealth">GitHub</a> • 
+      <a href="https://www.linkedin.com/in/chukwuebuka-okeke-3937b571/">LinkedIn</a>
+    </td>
+    <td align="center">
+      <b>Ariamehr Maleki</b><br>
+      Frontend & UX Design<br>
+      <a href="https://github.com/Ariamehr-Maleki">GitHub</a> • 
+      <a href="https://www.linkedin.com/in/ariamehr-maleki/">LinkedIn</a>
+    </td>
+  </tr>
+</table>
 
-**Chukwuebuka Okeke** - Contributor
-- LinkedIn: [Chukwuebuka Okeke](https://www.linkedin.com/in/chukwuebuka-okeke-3937b571/)
-
-**Ariamehr Maleki** - Contributor
-- LinkedIn: [Ariamehr Maleki](https://www.linkedin.com/in/ariamehr-maleki/)
-
+**Built for:** [5-Day AI Agents Intensive Capstone Project](https://www.kaggle.com/competitions/agents-intensive-capstone-project)  
+**Track:** Agents for Good - Education & Research  
+**Course:** November 2024
 
 ---
 
 <div align="center">
 
-**⭐ If you find this project useful, please consider giving it a star!**
+### ⭐ If you find this project useful, please star it!
 
 **Made with ❤️ and ⚛️ using Google Gemini & Agent Development Kit**
 
-[⬆ Back to Top](#researchforge-ai-)
+[🚀 Try Live Demo](https://researchforge-112206130932.us-central1.run.app/) •
+[📖 Read Blog](https://medium.com/@iiiassia.beniii/building-researchforge-ai-how-we-created-a-multi-agent-system-to-revolutionize-research-b1ab0f21af4f) •
+[💻 View Notebook](https://www.kaggle.com/code/assiaben/researchforge-ai)
+
+[⬆ Back to Top](#top)
 
 </div>

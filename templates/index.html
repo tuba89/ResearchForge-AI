@@ -7,624 +7,786 @@
     <meta name="description" content="ResearchForge AI - AI-powered research collaboration platform">
     <title>ResearchForge AI | Research Collaboration Platform</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="/static/images/favicon.png" type="image/png">
-
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Marked.js for Markdown rendering -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-    <!-- Highlight.js for code syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-
-    <!-- Custom Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                        },
-                        accent: {
-                            purple: '#764ba2',
-                            blue: '#667eea'
-                        }
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-in',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'gradient': 'gradient 3s ease infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' }
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' }
-                        },
-                        gradient: {
-                            '0%, 100%': { backgroundPosition: '0% 50%' },
-                            '50%': { backgroundPosition: '100% 50%' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Font Awesome -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        /* Animated gradient background */
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            background-size: 200% 200%;
-            animation: gradient 8s ease infinite;
-        }
-
-        /* Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* Card hover effects */
-        .hover-lift {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .hover-lift:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Custom scrollbar */
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f5f9;
-            border-radius: 10px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-            border-radius: 10px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #764ba2 0%, #667eea 100%);
-        }
-
-        /* Chat message styling */
-        .message {
-            animation: slideUp 0.3s ease-out;
-        }
-
-        .message-user {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .message-ai {
-            background: white;
-            border: 1px solid #e2e8f0;
-        }
-
-        /* Markdown content styling */
-        .markdown-content h1 {
-            font-size: 1.875rem;
-            font-weight: 700;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            color: #1e293b;
-        }
-
-        .markdown-content h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: #334155;
-        }
-
-        .markdown-content h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-            color: #475569;
-        }
-
-        .markdown-content p {
-            margin-bottom: 1rem;
-            line-height: 1.75;
-            color: #334155;
-        }
-
-        .markdown-content ul,
-        .markdown-content ol {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .markdown-content li {
-            margin-bottom: 0.5rem;
-            line-height: 1.75;
-        }
-
-        .markdown-content code {
-            background: #f1f5f9;
-            padding: 0.125rem 0.375rem;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-            color: #e11d48;
-        }
-
-        .markdown-content pre {
-            background: #1e293b;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            margin-bottom: 1rem;
-        }
-
-        .markdown-content pre code {
-            background: transparent;
-            padding: 0;
-            color: #e2e8f0;
-        }
-
-        .markdown-content blockquote {
-            border-left: 4px solid #667eea;
-            padding-left: 1rem;
-            margin: 1rem 0;
-            color: #64748b;
-            font-style: italic;
-        }
-
-        .markdown-content a {
-            color: #667eea;
-            text-decoration: underline;
-        }
-
-        .markdown-content a:hover {
-            color: #764ba2;
-        }
-
-        .markdown-content strong {
-            font-weight: 600;
-            color: #1e293b;
-        }
-
-        .markdown-content em {
-            font-style: italic;
-            color: #475569;
-        }
-
-        /* Paper card */
-        .paper-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
-
-        .paper-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 10px 40px -15px rgba(102, 126, 234, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* Loading animation */
-        @keyframes shimmer {
-            0% {
-                background-position: -1000px 0;
-            }
-
-            100% {
-                background-position: 1000px 0;
-            }
-        }
-
-        .loading-shimmer {
-            animation: shimmer 2s infinite;
-            background: linear-gradient(to right, #f1f5f9 0%, #e2e8f0 50%, #f1f5f9 100%);
-            background-size: 1000px 100%;
-        }
-
-        /* Typing indicator */
-        .typing-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        .typing-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #667eea;
-            animation: typing 1.4s infinite;
-        }
-
-        .typing-dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .typing-dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes typing {
-
-            0%,
-            60%,
-            100% {
-                transform: translateY(0);
-            }
-
-            30% {
-                transform: translateY(-10px);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/static/css/agent-dashboard.css">
+    <link rel="icon" type="image/png" href="/static/images/favicon.png">
 </head>
 
-<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen">
+<body class="antialiased">
     <!-- Navigation -->
-    <nav class="glass sticky top-0 z-50 shadow-lg">
+    <nav class="nav-glass" id="navbar"
+        style="background: linear-gradient(135deg, rgba(30, 27, 75, 0.95) 0%, rgba(49, 46, 129, 0.95) 100%); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-3">
-                    <div class="text-3xl animate-pulse-slow">⚛️</div>
-                    <h1
-                        class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                        ResearchForge AI
-                    </h1>
-                    <span
-                        class="hidden sm:inline-block text-xs bg-gradient-to-r from-green-400 to-blue-500 text-white px-2 py-1 rounded-full font-semibold">
-                        LIVE
-                    </span>
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Section -->
+                <div class="flex items-center gap-4">
+                    <!-- Animated Logo Container -->
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500 opacity-70 group-hover:opacity-100 animate-pulse">
+                        </div>
+                        <div
+                            class="relative w-12 h-12 rounded-2xl flex items-center justify-center bg-gradient-to-br from-indigo-600/30 to-purple-600/30 shadow-2xl border border-indigo-500/30 overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                            <!-- Logo with transparent background --->
+                            <img src="/static/images/atom_logo.png" alt="Logo"
+                                class="w-8 h-8 object-contain filter brightness-125 group-hover:brightness-150 transition-all duration-300">
+                        </div>
+                        <!-- Animated ring effect -->
+                        <div
+                            class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-cyan-400/50 transition-all duration-500">
+                        </div>
+                    </div>
+
+                    <!-- Text with enhanced gradient -->
+                    <div class="relative">
+                        <span
+                            class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-white to-purple-300 animate-gradient-x bg-[length:200%_auto]">
+                            ResearchForge AI
+                        </span>
+                        <div
+                            class="absolute -bottom-2 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent">
+                        </div>
+                        <div class="text-xs text-cyan-300/70 font-medium mt-1">
+                            Powered by Gemini & Multi-Agent Systems
+                        </div>
+                    </div>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <a href="#features" class="text-gray-700 hover:text-purple-600 transition font-medium">Features</a>
-                    <a href="#about" class="text-gray-700 hover:text-purple-600 transition font-medium">About</a>
-                    <a href="https://github.com/tuba89/ResearchForge-AI" target="_blank"
-                        class="text-gray-700 hover:text-purple-600 transition">
-                        <i class="fab fa-github text-xl"></i>
+
+                <!-- Navigation Links - -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features"
+                        class="relative text-gray-300 hover:text-white transition-all duration-300 font-medium group">
+                        Features
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#dashboard"
+                        class="relative text-gray-300 hover:text-white transition-all duration-300 font-medium group">
+                        Agents
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#chat"
+                        class="relative px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 group overflow-hidden">
+                        <!-- Button background gradient -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 group-hover:from-cyan-400 group-hover:to-purple-500 transition-all duration-300">
+                        </div>
+                        <!-- Shine effect -->
+                        <div class="absolute inset-0 translate-x-full group-hover:-translate-x-full transition-transform duration-700"
+                            style="background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);">
+                        </div>
+                        <!-- Button text -->
+                        <span class="relative text-white font-bold flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg>
+                            Try AI Assistant
+                        </span>
                     </a>
                 </div>
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="animate-fade-in">
-                <div class="text-7xl mb-6 animate-pulse-slow">⚛️</div>
-                <h2
-                    class="text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    AI-Powered Research
-                </h2>
-                <h3 class="text-4xl font-bold mb-6 text-gray-800">
-                    Collaboration Platform
-                </h3>
-                <p class="text-xl mb-8 text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Transform months of research into minutes. Discover papers, generate proposals,
-                    and connect with collaborators using cutting-edge AI technology.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button onclick="scrollToChat()"
-                        class="group relative px-8 py-4 rounded-xl font-semibold text-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:scale-105 transition-transform">
-                        </div>
-                        <span class="relative flex items-center">
-                            <i class="fas fa-rocket mr-2"></i>
-                            Start Now - It's Free
-                        </span>
-                    </button>
-                    <button onclick="scrollToSearch()"
-                        class="px-8 py-4 rounded-xl font-semibold text-gray-700 bg-white border-2 border-gray-300 hover:border-purple-600 hover:text-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl">
-                        <i class="fas fa-search mr-2"></i>
-                        Browse Papers
-                    </button>
-                </div>
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div
+                class="inline-block px-4 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-200 text-sm font-semibold mb-6 animate-fade-in backdrop-blur-sm">
+                ✨ Powered by Gemini 2.0 & Multi-Agent Systems
             </div>
+            <h1 class="hero-title animate-slide-up">
+                Accelerate Your Research<br>With Intelligent Agents
+            </h1>
+            <p class="hero-subtitle animate-slide-up" style="animation-delay: 0.2s">
+                Discover papers, generate proposals, and find collaborators 10x faster using our specialized 8-agent
+                orchestration system.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 animate-slide-up" style="animation-delay: 0.4s">
+                <button onclick="scrollToSearch()"
+                    class="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-lg transition shadow-lg hover:shadow-indigo-500/30 flex items-center gap-2">
+                    <i class="fas fa-search"></i> Start Discovery
+                </button>
+                <button onclick="scrollToChat()"
+                    class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-bold text-lg transition backdrop-blur-md flex items-center gap-2">
+                    <i class="fas fa-robot"></i> Talk to Agents
+                </button>
+            </div>
+        </div>
+    </section>
 
-            <!-- Stats -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto">
-                <div class="glass rounded-2xl p-6 hover-lift">
-                    <div class="text-4xl font-bold text-purple-600 mb-2">8</div>
-                    <div class="text-gray-600 font-medium">AI Agents</div>
+    <!-- Optional API Key Section -->
+    <section id="apiKeySection" class="py-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl border border-white/20 p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <div
+                        class="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-full mb-4">
+                        <span class="text-purple-700 font-semibold text-sm">🔑 Optional Enhancement</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-3">Use Your Own Google API Key</h2>
+                    <p class="text-gray-600 text-lg">Get better performance and unlimited access</p>
                 </div>
-                <div class="glass rounded-2xl p-6 hover-lift">
-                    <div class="text-4xl font-bold text-blue-600 mb-2">Real-time</div>
-                    <div class="text-gray-600 font-medium">arXiv Search</div>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-bolt text-green-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Faster Responses</h4>
+                            <p class="text-sm text-gray-600">No waiting in queue</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-infinity text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">No Rate Limits</h4>
+                            <p class="text-sm text-gray-600">Use as much as you need</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div
+                            class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-star text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Better Quality</h4>
+                            <p class="text-sm text-gray-600">Access to premium models</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div
+                            class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt text-indigo-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Secure</h4>
+                            <p class="text-sm text-gray-600">Stored only in your browser</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="glass rounded-2xl p-6 hover-lift">
-                    <div class="text-4xl font-bold text-pink-600 mb-2">A2A</div>
-                    <div class="text-gray-600 font-medium">Protocol</div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 mb-6">
+                    <label class="block text-sm font-semibold text-gray-700 mb-3">
+                        <i class="fas fa-key mr-2"></i>Your Google API Key
+                    </label>
+                    <div class="flex gap-3">
+                        <input type="password" id="userApiKeyInput" placeholder="AIza..."
+                            class="flex-1 px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none" />
+                        <button onclick="saveUserApiKey()"
+                            class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl font-semibold transition shadow-lg">
+                            Save Key
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Your key is stored securely in your browser session only. We never send it to our servers.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <p class="text-sm text-gray-600 mb-3">Don't have an API key?</p>
+                    <a href="https://aistudio.google.com/apikey" target="_blank"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-indigo-200 hover:border-indigo-400 text-indigo-700 rounded-xl font-semibold transition">
+                        <i class="fas fa-external-link-alt"></i>
+                        Get Free API Key from Google AI Studio
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <!-- Features Section -->
-        <section id="features" class="mb-20">
+    <!-- Features Grid -->
+    <section id="features" class="py-16 bg-gradient-to-b from-white to-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold text-gray-800 mb-4">Powerful Capabilities</h3>
-                <p class="text-xl text-gray-600">Everything you need for modern research collaboration</p>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">Powerful Capabilities</h2>
+                <p class="text-slate-600">Everything you need to streamline your research workflow</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass rounded-2xl p-8 hover-lift">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div
+                    class="group p-6 rounded-xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-lg transition duration-300">
                     <div
-                        class="bg-gradient-to-br from-blue-400 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                        <i class="fas fa-search text-white text-2xl"></i>
+                        class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-search text-blue-600 text-xl"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Smart Paper Discovery</h4>
-                    <p class="text-gray-600 leading-relaxed">
-                        Search millions of research papers from arXiv with AI-powered relevance ranking
-                        and instant PDF access. Get exactly what you need, when you need it.
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Smart Discovery</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Search millions of arXiv papers with semantic understanding
                     </p>
                 </div>
-                <div class="glass rounded-2xl p-8 hover-lift">
+
+                <!-- Feature 2 -->
+                <div
+                    class="group p-6 rounded-xl bg-white border border-slate-200 hover:border-purple-300 hover:shadow-lg transition duration-300">
                     <div
-                        class="bg-gradient-to-br from-purple-400 to-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                        <i class="fas fa-brain text-white text-2xl"></i>
+                        class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-brain text-purple-600 text-xl"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Intelligent Assistant</h4>
-                    <p class="text-gray-600 leading-relaxed">
-                        Chat with an AI agent powered by Google Gemini. Ask questions, refine searches,
-                        and get expert guidance on your research journey.
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Intelligent Synthesis</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Get instant summaries, proposals, and gap analyses
                     </p>
                 </div>
-                <div class="glass rounded-2xl p-8 hover-lift">
+
+                <!-- Feature 3 -->
+                <div
+                    class="group p-6 rounded-xl bg-white border border-slate-200 hover:border-green-300 hover:shadow-lg transition duration-300">
                     <div
-                        class="bg-gradient-to-br from-pink-400 to-pink-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                        <i class="fas fa-file-signature text-white text-2xl"></i>
+                        class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-paper-plane text-green-600 text-xl"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Auto-Generate Content</h4>
-                    <p class="text-gray-600 leading-relaxed">
-                        Create professional research proposals and collaboration emails in seconds.
-                        Save hours of writing time with AI-powered generation.
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Automated Outreach</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Draft personalized collaboration emails to authors
                     </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- AI Chat Section (Primary) -->
-        <section id="chat" class="mb-20">
-            <div class="glass rounded-3xl shadow-2xl p-8">
-                <div class="flex items-center justify-between mb-6">
-                    <div>
-                        <h3 class="text-3xl font-bold text-gray-800 mb-2">
-                            <i class="fas fa-comments text-purple-600 mr-3"></i>
-                            AI Research Assistant
-                        </h3>
-                        <p class="text-gray-600">
-                            Powered by Google Gemini
-                            <span
-                                class="text-xs bg-gradient-to-r from-blue-100 to-purple-100 text-gray-700 px-2 py-1 rounded-full ml-1">
-                                Multi-Model
-                            </span>
-                        </p>
-                    </div>
-                    <button onclick="clearChat()"
-                        class="text-gray-500 hover:text-red-600 transition px-4 py-2 rounded-lg hover:bg-red-50">
-                        <i class="fas fa-trash-alt mr-2"></i>
-                        Clear
-                    </button>
-                </div>
+    <!-- Agent Dashboard -->
+    <section id="dashboard" class="py-24 bg-slate-50 relative overflow-hidden">
+        <!-- Decorative background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-30 pointer-events-none">
+            <div
+                class="absolute -top-24 -right-24 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob">
+            </div>
+            <div
+                class="absolute top-24 -left-24 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000">
+            </div>
+        </div>
 
-                <!-- Chat Messages -->
-                <div id="chatMessages"
-                    class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 h-[600px] overflow-y-auto mb-6 custom-scrollbar">
-                    <div class="text-center text-gray-400 mt-40">
-                        <div class="text-8xl mb-6 animate-pulse-slow">⚛️</div>
-                        <h4 class="text-2xl font-bold text-gray-700 mb-3">Ready to assist your research</h4>
-                        <p class="text-lg mb-6">Start a conversation with the AI assistant</p>
-                        <div class="flex flex-wrap justify-center gap-3">
-                            <button onclick="fillExample('Find papers about quantum computing')"
-                                class="bg-white px-4 py-2 rounded-lg text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition shadow">
-                                🔍 Find papers
-                            </button>
-                            <button onclick="fillExample('Generate a research proposal')"
-                                class="bg-white px-4 py-2 rounded-lg text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition shadow">
-                                📝 Generate proposal
-                            </button>
-                            <button onclick="fillExample('Draft a collaboration email')"
-                                class="bg-white px-4 py-2 rounded-lg text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition shadow">
-                                ✉️ Draft email
-                            </button>
-                        </div>
+        <div class="dashboard-container relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-indigo-600 font-bold tracking-wider uppercase text-sm">Orchestration Layer</span>
+                <h2 class="section-title mt-2">Meet Your AI Research Team</h2>
+                <p class="section-subtitle">8 specialized agents working in perfect harmony</p>
+            </div>
+
+            <div class="agent-grid">
+                <!-- 1. Data Scout -->
+                <div class="agent-card" id="status-datascout">
+                    <div class="agent-icon">🔭</div>
+                    <h4 class="agent-name">Data Scout</h4>
+                    <p class="agent-description">Scours arXiv for relevant papers & datasets</p>
+                    <div class="status-badge ready" id="badge-datascout">
+                        <span class="w-2 h-2 rounded-full bg-current"></span> Ready
                     </div>
                 </div>
 
-                <!-- Chat Input -->
-                <div class="flex gap-3">
-                    <input type="text" id="chatInput" placeholder="Ask about papers, proposals, or collaboration..."
-                        class="flex-1 px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition shadow-sm"
-                        onkeypress="if(event.key === 'Enter' && !event.shiftKey) sendMessage()">
-                    <button onclick="sendMessage()"
-                        class="group relative px-8 py-4 rounded-xl font-semibold text-white overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 group-hover:scale-105 transition-transform">
-                        </div>
-                        <span class="relative">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Send
-                        </span>
-                    </button>
+                <!-- 2. Profile Builder -->
+                <div class="agent-card" id="status-profilebuilder">
+                    <div class="agent-icon">🧬</div>
+                    <h4 class="agent-name">Profile Builder</h4>
+                    <p class="agent-description">Analyzes researcher profiles & interests</p>
+                    <div class="status-badge ready" id="badge-profilebuilder">
+                        <span class="w-2 h-2 rounded-full bg-current"></span> Ready
+                    </div>
+                </div>
+
+                <!-- 3. Match Engine -->
+                <div class="agent-card" id="status-matchengine">
+                    <div class="agent-icon">🧩</div>
+                    <h4 class="agent-name">Match Engine</h4>
+                    <p class="agent-description">Calculates compatibility scores</p>
+                    <div class="status-badge ready" id="badge-matchengine">
+                        <span class="w-2 h-2 rounded-full bg-current"></span> Ready
+                    </div>
+                </div>
+
+                <!-- 4. Proposal Generator -->
+                <div class="agent-card" id="status-proposalgenerator">
+                    <div class="agent-icon">📝</div>
+                    <h4 class="agent-name">Proposal Gen</h4>
+                    <p class="agent-description">Drafts comprehensive research proposals</p>
+                    <div class="status-badge ready" id="badge-proposalgenerator">
+                        <span class="w-2 h-2 rounded-full bg-current"></span> Ready
+                    </div>
+                </div>
+
+                <!-- 5. Outreach Agent -->
+                <div class="agent-card" id="status-outreachagent">
+                    <div class="agent-icon">📨</div>
+                    <h4 class="agent-name">Outreach</h4>
+                    <p class="agent-description">Composes personalized emails</p>
+                    <div class="status-badge ready" id="badge-outreachagent">
+                        <span class="w-2 h-2 rounded-full bg-current"></span> Ready
+                    </div>
+                </div>
+
+                <!-- 6. Memory Curator -->
+                <div class="agent-card" id="status-memorycurator">
+                    <div class="agent-icon">🧠</div>
+                    <h4 class="agent-name">Memory Curator</h4>
+                    <p class="agent-description">Manages context & conversation history</p>
+                    <div class="status-badge ready" id="badge-memorycurator">
+                        <span class="w-2 h-2 rounded-full bg-current"></span> Ready
+                    </div>
+                </div>
+
+                <!-- 7. Quality Evaluator -->
+                <div class="agent-card" id="status-qualityevaluator">
+                    <div class="agent-icon">⚖️</div>
+                    <h4 class="agent-name">Evaluator</h4>
+                    <p class="agent-description">Ensures output quality & accuracy</p>
+                    <div class="status-badge ready" id="badge-qualityevaluator">
+                        <span class="w-2 h-2 rounded-full bg-current"></span> Ready
+                    </div>
+                </div>
+
+                <!-- 8. Orchestrator -->
+                <div class="agent-card" id="status-orchestrator">
+                    <div class="agent-icon">🎼</div>
+                    <h4 class="agent-name">Orchestrator</h4>
+                    <p class="agent-description">Coordinates the entire agent swarm</p>
+                    <div class="status-badge ready" id="badge-orchestrator">
+                        <span class="w-2 h-2 rounded-full bg-current"></span> Ready
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Search Section (Secondary) -->
-        <section id="search" class="mb-20">
-            <div class="glass rounded-3xl shadow-2xl p-8">
-                <h3 class="text-3xl font-bold text-gray-800 mb-6">
-                    <i class="fas fa-search text-blue-600 mr-3"></i>
-                    Quick Paper Search
-                </h3>
+    <!-- Search Section -->
+    <section id="search" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-white rounded-3xl shadow-2xl border border-slate-100 p-8 md:p-12">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">Search Research Papers</h2>
+                    <p class="text-slate-600">Access the arXiv database with AI-powered filtering</p>
+                </div>
 
-                <div class="mb-6">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
-                        <div class="md:col-span-3">
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Search Query</label>
-                            <input type="text" id="searchQuery"
-                                placeholder="e.g., machine learning, quantum computing, neural networks..."
-                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition shadow-sm">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Category</label>
-                            <select id="searchCategory"
-                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition shadow-sm">
-                                <option value="all">All Categories</option>
-                                <option value="cs.AI">Artificial Intelligence</option>
-                                <option value="cs.LG">Machine Learning</option>
-                                <option value="cs.CV">Computer Vision</option>
-                                <option value="cs.CL">Computational Linguistics</option>
-                                <option value="cs.RO">Robotics</option>
-                                <option value="stat.ML">Statistics ML</option>
-                            </select>
+                <div class="space-y-6">
+                    <div class="relative">
+                        <input type="text" id="searchQuery"
+                            class="w-full pl-6 pr-16 py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition text-lg placeholder-slate-400"
+                            placeholder="e.g., 'Transformer models in medical imaging'...">
+                        <div class="absolute right-4 top-4 text-slate-400">
+                            <i class="fas fa-search text-xl"></i>
                         </div>
                     </div>
 
-                    <button onclick="searchPapers()"
-                        class="group relative w-full px-6 py-4 rounded-xl font-semibold text-white overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 group-hover:scale-105 transition-transform">
-                        </div>
-                        <span class="relative">
-                            <i class="fas fa-search mr-2"></i>
-                            Search arXiv Database
-                        </span>
-                    </button>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <select id="searchCategory"
+                            class="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-slate-700 max-h-60 overflow-y-auto">
+                            <option value="all">All Categories (Global Search)</option>
+
+                            <!-- PHYSICS -->
+                            <optgroup label="Physics">
+                                <option value="astro-ph">Astrophysics (astro-ph)</option>
+                                <option value="cond-mat">Condensed Matter (cond-mat)</option>
+                                <option value="gr-qc">General Relativity & Quantum Cosmology (gr-qc)</option>
+                                <option value="hep-ex">High Energy Physics - Experiment (hep-ex)</option>
+                                <option value="hep-lat">High Energy Physics - Lattice (hep-lat)</option>
+                                <option value="hep-ph">High Energy Physics - Phenomenology (hep-ph)</option>
+                                <option value="hep-th">High Energy Physics - Theory (hep-th)</option>
+                                <option value="math-ph">Mathematical Physics (math-ph)</option>
+                                <option value="nlin">Nonlinear Sciences (nlin)</option>
+                                <option value="nucl-ex">Nuclear Experiment (nucl-ex)</option>
+                                <option value="nucl-th">Nuclear Theory (nucl-th)</option>
+                                <option value="physics">Physics (General) (physics)</option>
+                                <option value="quant-ph">Quantum Physics (quant-ph)</option>
+                            </optgroup>
+
+                            <!-- COMPUTER SCIENCE -->
+                            <optgroup label="Computer Science">
+                                <option value="cs.AI">Artificial Intelligence (cs.AI)</option>
+                                <option value="cs.LG">Machine Learning (cs.LG)</option>
+                                <option value="cs.CL">Computation & Language (cs.CL)</option>
+                                <option value="cs.CV">Computer Vision (cs.CV)</option>
+                                <option value="cs.RO">Robotics (cs.RO)</option>
+                                <option value="cs.CR">Cryptography and Security (cs.CR)</option>
+                                <option value="cs.SE">Software Engineering (cs.SE)</option>
+                                <option value="cs.HC">Human-Computer Interaction (cs.HC)</option>
+                                <option value="cs.CY">Computers and Society (cs.CY)</option>
+                                <option value="cs.SI">Social and Information Networks (cs.SI)</option>
+                                <option value="cs.DS">Data Structures and Algorithms (cs.DS)</option>
+                                <option value="cs.IT">Information Theory (cs.IT)</option>
+                                <option value="cs.NI">Networking and Internet Architecture (cs.NI)</option>
+                            </optgroup>
+
+                            <!-- MATHEMATICS -->
+                            <optgroup label="Mathematics">
+                                <option value="math.CO">Combinatorics (math.CO)</option>
+                                <option value="math.DS">Dynamical Systems (math.DS)</option>
+                                <option value="math.FA">Functional Analysis (math.FA)</option>
+                                <option value="math.GT">Geometric Topology (math.GT)</option>
+                                <option value="math.LO">Logic (math.LO)</option>
+                                <option value="math.NT">Number Theory (math.NT)</option>
+                                <option value="math.PR">Probability (math.PR)</option>
+                                <option value="math.ST">Statistics Theory (math.ST)</option>
+                            </optgroup>
+
+                            <!-- ECONOMICS -->
+                            <optgroup label="Economics">
+                                <option value="econ.EM">Econometrics (econ.EM)</option>
+                                <option value="econ.GN">General Economics (econ.GN)</option>
+                                <option value="econ.TH">Theoretical Economics (econ.TH)</option>
+                            </optgroup>
+
+                            <!-- QUANTITATIVE BIOLOGY -->
+                            <optgroup label="Quantitative Biology">
+                                <option value="q-bio.BM">Biomolecules (q-bio.BM)</option>
+                                <option value="q-bio.GN">Genomics (q-bio.GN)</option>
+                                <option value="q-bio.NC">Neurons and Cognition (q-bio.NC)</option>
+                                <option value="q-bio.QM">Quantitative Methods (q-bio.QM)</option>
+                            </optgroup>
+
+                            <!-- QUANTITATIVE FINANCE -->
+                            <optgroup label="Quantitative Finance">
+                                <option value="q-fin.CP">Computational Finance (q-fin.CP)</option>
+                                <option value="q-fin.EC">Economics (q-fin.EC)</option>
+                                <option value="q-fin.GN">General Finance (q-fin.GN)</option>
+                                <option value="q-fin.MF">Mathematical Finance (q-fin.MF)</option>
+                                <option value="q-fin.PM">Portfolio Management (q-fin.PM)</option>
+                                <option value="q-fin.RM">Risk Management (q-fin.RM)</option>
+                                <option value="q-fin.ST">Statistical Finance (q-fin.ST)</option>
+                                <option value="q-fin.TR">Trading and Market Microstructure (q-fin.TR)</option>
+                            </optgroup>
+
+                            <!-- STATISTICS -->
+                            <optgroup label="Statistics">
+                                <option value="stat.ML">Machine Learning (stat.ML)</option>
+                                <option value="stat.AP">Applications (stat.AP)</option>
+                                <option value="stat.CO">Computation (stat.CO)</option>
+                                <option value="stat.ME">Methodology (stat.ME)</option>
+                                <option value="stat.TH">Statistics Theory (stat.TH)</option>
+                            </optgroup>
+
+                            <!-- EE & SYSTEMS SCIENCE -->
+                            <optgroup label="Electrical Engineering">
+                                <option value="eess.AS">Audio and Speech Processing (eess.AS)</option>
+                                <option value="eess.IV">Image and Video Processing (eess.IV)</option>
+                                <option value="eess.SP">Signal Processing (eess.SP)</option>
+                                <option value="eess.SY">Systems and Control (eess.SY)</option>
+                            </optgroup>
+                        </select>
+                        <button onclick="searchPapers()"
+                            class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold transition shadow-lg shadow-indigo-200">
+                            <i class="fas fa-search mr-2"></i>Find Papers
+                        </button>
+                    </div>
+
+                    <!-- Export to BibTeX Button (shows after search) -->
+                    <div id="exportButtonContainer" class="hidden mt-4">
+                        <button onclick="exportToBibTeX()"
+                            class="w-full py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-xl font-semibold transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i>
+                            Export to BibTeX
+                            <span id="exportCount" class="ml-2 px-2 py-0.5 bg-white/20 rounded-full text-xs"></span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Loading -->
+                <!-- Search History Container -->
+                <div id="searchHistoryContainer" class="mt-6">
+                    <!-- Search history will be dynamically loaded here -->
+                </div>
+
+                <!-- Results Area -->
                 <div id="searchLoading" class="hidden text-center py-12">
                     <div
-                        class="inline-block animate-spin rounded-full h-16 w-16 border-4 border-blue-200 border-t-blue-600">
+                        class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-indigo-200 border-t-indigo-600">
                     </div>
-                    <p class="text-gray-600 mt-4 font-medium">Searching millions of papers...</p>
+                    <p class="text-slate-500 mt-4 font-medium">Scouring the archives...</p>
                 </div>
-
-                <!-- Results -->
-                <div id="searchResults" class="mt-6"></div>
+                <div id="searchResults" class="mt-8 space-y-4"></div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="glass rounded-3xl p-12">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold text-gray-800 mb-4">Built with Cutting-Edge Technology</h3>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    ResearchForge AI leverages Google's latest AI technologies to deliver an unparalleled
-                    research collaboration experience. Built during the 5-Day AI Agents Intensive Course.
+    <!-- Chat Interface -->
+    <section id="chat" class="chat-section">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-2xl">
+                        🤖
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Research Assistant</h3>
+                        <p class="text-indigo-100 text-sm">Online • 8 Agents Ready</p>
+                    </div>
+                </div>
+                <button onclick="clearChat()"
+                    class="text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition text-sm font-medium">
+                    <i class="fas fa-trash-alt mr-2"></i>Clear
+                </button>
+            </div>
+            <div id="chatMessages" class="chat-messages custom-scrollbar">
+                <!-- Welcome State -->
+                <div id="welcomeState" class="text-center py-12">
+                    <div class="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <span class="text-3xl">⚛️</span>
+                    </div>
+                    <h4 class="text-2xl font-bold text-slate-800 mb-2">How can I help your research?</h4>
+                    <p class="text-slate-500 mb-6 max-w-md mx-auto text-sm">I can find papers, analyze trends, generate
+                        proposals, and draft collaboration emails.</p>
+
+                    <!-- Compact Example Cards -->
+                    <div class="space-y-2 max-w-2xl mx-auto">
+
+                        <!-- Example 1: Find Research Papers (DataScout) -->
+                        <button onclick="runExample('find-papers')"
+                            class="w-full p-3 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl hover:border-indigo-400 hover:shadow-lg transition-all duration-300 text-left group">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-search text-white text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h5
+                                        class="text-sm font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">
+                                        🔬 Find Research Papers
+                                    </h5>
+                                    <p class="text-slate-600 text-xs truncate">
+                                        Search for renewable energy & sustainability papers
+                                    </p>
+                                </div>
+                                <i
+                                    class="fas fa-arrow-right text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                            </div>
+                        </button>
+
+                        <!-- Example 2: Generate Proposal (ProposalGenerator) -->
+                        <button onclick="runExample('generate-proposal')"
+                            class="w-full p-3 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-xl hover:border-purple-400 hover:shadow-lg transition-all duration-300 text-left group">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-file-alt text-white text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h5
+                                        class="text-sm font-bold text-slate-800 group-hover:text-purple-600 transition-colors">
+                                        📝 Generate Research Proposal
+                                    </h5>
+                                    <p class="text-slate-600 text-xs truncate">
+                                        AI for climate change prediction proposal
+                                    </p>
+                                </div>
+                                <i
+                                    class="fas fa-arrow-right text-slate-400 group-hover:text-purple-600 group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                            </div>
+                        </button>
+
+                        <!-- Example 3: Build Profiles (ProfileBuilder) -->
+                        <button onclick="runExample('build-profiles')"
+                            class="w-full p-3 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl hover:border-amber-400 hover:shadow-lg transition-all duration-300 text-left group">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-user-plus text-white text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h5
+                                        class="text-sm font-bold text-slate-800 group-hover:text-amber-600 transition-colors">
+                                        👤 Build Researcher Profiles
+                                    </h5>
+                                    <p class="text-slate-600 text-xs truncate">
+                                        Extract authors from recent ML papers
+                                    </p>
+                                </div>
+                                <i
+                                    class="fas fa-arrow-right text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                            </div>
+                        </button>
+
+                        <!-- Example 5: Find Collaborators (MatchEngine) -->
+                        <button onclick="runExample('find-collaborators')"
+                            class="w-full p-3 bg-gradient-to-r from-rose-50 to-red-50 border border-rose-200 rounded-xl hover:border-rose-400 hover:shadow-lg transition-all duration-300 text-left group">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-rose-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-users text-white text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h5
+                                        class="text-sm font-bold text-slate-800 group-hover:text-rose-600 transition-colors">
+                                        💞 Find Collaborators
+                                    </h5>
+                                    <p class="text-slate-600 text-xs truncate">
+                                        NLP researcher seeking linguistics or cognitive-science partners
+                                    </p>
+                                </div>
+                                <i
+                                    class="fas fa-arrow-right text-slate-400 group-hover:text-rose-600 group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                            </div>
+                        </button>
+
+                        <!-- Example 6: Draft Email (OutreachSpecialist) -->
+                        <button onclick="runExample('draft-email')"
+                            class="w-full p-3 bg-gradient-to-r from-cyan-50 to-sky-50 border border-cyan-200 rounded-xl hover:border-cyan-400 hover:shadow-lg transition-all duration-300 text-left group">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-envelope text-white text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h5
+                                        class="text-sm font-bold text-slate-800 group-hover:text-cyan-600 transition-colors">
+                                        ✉️ Draft Collaboration Email
+                                    </h5>
+                                    <p class="text-slate-600 text-xs truncate">
+                                        Create a professional collaboration outreach email
+                                    </p>
+                                </div>
+                                <i
+                                    class="fas fa-arrow-right text-slate-400 group-hover:text-cyan-600 group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                            </div>
+                        </button>
+
+                        <!-- Example 7: Export Results (DataScout + Export Tool) -->
+                        <button onclick="runExample('export-results')"
+                            class="w-full p-3 bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-xl hover:border-emerald-400 hover:shadow-lg transition-all duration-300 text-left group">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-download text-white text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h5
+                                        class="text-sm font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">
+                                        📊 Export Search Results
+                                    </h5>
+                                    <p class="text-slate-600 text-xs truncate">
+                                        Blockchain in healthcare — export structured results
+                                    </p>
+                                </div>
+                                <i
+                                    class="fas fa-arrow-right text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                            </div>
+                        </button>
+
+                        <!-- Example 8: Query Suggestions (DataScout + Suggestions Tool) -->
+                        <button onclick="runExample('query-suggestions')"
+                            class="w-full p-3 bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-200 rounded-xl hover:border-violet-400 hover:shadow-lg transition-all duration-300 text-left group">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-violet-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-lightbulb text-white text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h5
+                                        class="text-sm font-bold text-slate-800 group-hover:text-violet-600 transition-colors">
+                                        💡 Get Query Suggestions
+                                    </h5>
+                                    <p class="text-slate-600 text-xs truncate">
+                                        Improve search terms for quantum computing topics
+                                    </p>
+                                </div>
+                                <i
+                                    class="fas fa-arrow-right text-slate-400 group-hover:text-violet-600 group-hover:translate-x-1 transition-all flex-shrink-0"></i>
+                            </div>
+                        </button>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Add spacing before user messages -->
+            <div class="mb-8"></div>
+
+            <div class="chat-input-area">
+                <div class="relative">
+                    <input type="text" id="chatInput"
+                        class="w-full pl-6 pr-16 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition text-slate-700 placeholder-slate-400"
+                        placeholder="Ask anything...">
+                    <button onclick="sendMessage()"
+                        class="absolute right-2 top-2 bottom-2 px-6 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition flex items-center justify-center">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="text-center text-xs text-slate-400 mt-3">
+                    AI agents can make mistakes. Please verify important information.
                 </p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div
-                        class="bg-gradient-to-br from-blue-100 to-blue-200 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <i class="fas fa-robot text-blue-600 text-3xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-800 mb-2">Google ADK</h4>
-                    <p class="text-gray-600">Agent Development Kit for multi-agent systems</p>
-                </div>
-                <div class="text-center">
-                    <div
-                        class="bg-gradient-to-br from-purple-100 to-purple-200 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <i class="fas fa-brain text-purple-600 text-3xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-800 mb-2">Gemini AI</h4>
-                    <p class="text-gray-600">Intelligent model fallback for reliability</p>
-                </div>
-                <div class="text-center">
-                    <div
-                        class="bg-gradient-to-br from-pink-100 to-pink-200 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <i class="fas fa-network-wired text-pink-600 text-3xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-800 mb-2">A2A Protocol</h4>
-                    <p class="text-gray-600">Agent-to-agent communication for coordination</p>
-                </div>
-            </div>
-
-            <div class="mt-12 pt-8 border-t border-gray-200">
-                <div class="flex flex-wrap justify-center items-center gap-8 text-gray-600">
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-green-500"></i>
-                        <span>Real arXiv API</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-green-500"></i>
-                        <span>ML-Powered Matching</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-green-500"></i>
-                        <span>8 Specialized Agents</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-green-500"></i>
-                        <span>Open Source</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="mt-20 py-12 bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <div class="text-5xl mb-4">⚛️</div>
-                <h3 class="text-2xl font-bold mb-2">ResearchForge AI</h3>
-                <p class="text-gray-400 mb-6">
-                    Built for the Google AI Agents Intensive Capstone Project
-                </p>
-                <div class="flex justify-center space-x-6 mb-6">
-                    <a href="https://github.com/tuba89/ResearchForge-AI"
-                        class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-github text-2xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-youtube text-2xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-linkedin text-2xl"></i>
+    <footer class="footer-premium">
+        <div class="footer-bg"></div>
+        <div class="footer-content">
+            <div class="mb-10">
+                <img src="/static/images/atom_logo.png" alt="ResearchForge AI" class="h-12 mb-4 inline-block">
+                <h3 class="text-2xl font-bold text-white inline-block ml-2 align-middle">ResearchForge AI</h3>
+                <p class="text-indigo-200 mt-2">Accelerating scientific discovery through multi-agent intelligence</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12 text-left">
+                <!-- Team Section -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                    <h4 class="text-lg font-bold text-white mb-4 border-b border-white/20 pb-2 flex items-center gap-2">
+                        <img src="/static/images/team.png" alt="Team" class="w-6 h-6">
+                        The Team
+                    </h4>
+                    <div class="space-y-3">
+                        <a href="https://www.linkedin.com/in/assia-benkedia-20708195/" target="_blank"
+                            class="flex items-center gap-3 text-indigo-100 hover:text-white transition group">
+                            <i class="fab fa-linkedin text-xl group-hover:scale-110 transition"></i>
+                            <span>Assia Benkedia</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/chukwuebuka-okeke-3937b571/" target="_blank"
+                            class="flex items-center gap-3 text-indigo-100 hover:text-white transition group">
+                            <i class="fab fa-linkedin text-xl group-hover:scale-110 transition"></i>
+                            <span>Chukwuebuka Okeke</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ariamehr-maleki/" target="_blank"
+                            class="flex items-center gap-3 text-indigo-100 hover:text-white transition group">
+                            <i class="fab fa-linkedin text-xl group-hover:scale-110 transition"></i>
+                            <span>Ariamehr Maleki</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Links -->
+                <div
+                    class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10 flex flex-col justify-center items-center text-center">
+                    <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <!-- <img src="/static/images/repository.png" alt="Repo" class="w-6 h-6"> -->
+                        Project Repository
+                    </h4>
+                    <a href="https://github.com/tuba89/ResearchForge-AI" target="_blank"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-white text-indigo-900 rounded-lg font-bold hover:bg-indigo-50 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        <i class="fab fa-github text-xl"></i>
+                        View on GitHub
                     </a>
                 </div>
-                <p class="text-gray-500 text-sm">
-                    &copy; 2025 ResearchForge AI. Powered by Google Gemini AI & Agent Development Kit
-                </p>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-sm text-white/50">
+                <p>&copy; 2025 ResearchForge AI. Built for the Agents Intensive Capstone Project.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Scripts -->
     <script src="/static/js/app.js"></script>
+    <script src="/static/js/agent-features.js"></script>
+    <script src="/static/js/app-extensions.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -1,13 +1,64 @@
+# This file specifies files that are *not* uploaded to Google Cloud
+# using gcloud. It follows the same syntax as .gitignore
+
+# Git files
 .gcloudignore
 .git
 .gitignore
-README.md
-.env
+
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
+
+# Virtual environments
 env/
 venv/
 .venv/
+ENV/
+
+# Environment variables (IMPORTANT - never deploy .env)
+.env
+.env.local
+
+# Development files
+*.ipynb
+*.ipynb_checkpoints/
+test_*.py
+debug_*.py
+inspect_*.py
+integrate_*.py
+
+# Documentation (optional - you may want to deploy README)
+# README.md
+*.md
+
+# Backup files
+*.backup
+*.bak
+*_backup.*
+
+# Logs and temporary files
+*.log
+usage_log.txt
+output.txt
+output.pdf
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Old/deprecated files
+intelligent_agent_system_for_research_collaboratio.py
+researchforge-ai*.py
+FINAL_STEPS.md
+GITHUB_PUSH_GUIDE.md
+INTEGRATION_GUIDE.md
