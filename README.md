@@ -8,15 +8,16 @@
 
 <div align="center">
 
-![ResearchForge AI](https://img.shields.io/badge/AI-Powered-blue)
-![Google Cloud](https://img.shields.io/badge/Google%20Cloud-Ready-green)
-![Flask](https://img.shields.io/badge/Flask-3.0.0-black)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38bdf8)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+![ResearchForge AI](https://img.shields.io/badge/AI-Powered-4a90e2?style=flat-rounded)
+![Google Cloud](https://img.shields.io/badge/Google%20Cloud-Ready-4285F4?style=flat-rounded)
+![Flask](https://img.shields.io/badge/Flask-3.0.0-2c3e50?style=flat-rounded)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-0ea5e9?style=flat-rounded)
+![License](https://img.shields.io/badge/License-MIT-f4d03f?style=flat-rounded)
 
-<!-- ✨ NEW: Research Paper Badges ✨ -->
-[![Research Paper](https://img.shields.io/badge/📄_Research_Paper-Read_Now-success?style=for-the-badge)](https://tuba89.github.io/ResearchForge-AI/docs/paper.html)
-[![Download PDF](https://img.shields.io/badge/📥_Download-PDF-red?style=for-the-badge)](Draft%20-%20Research%20Paper.pdf)
+<!--  Research Paper Badges -->
+[![Research Paper](https://img.shields.io/badge/📄_Research_Paper-Read_Now-195936?style=flat-rounded)](https://tuba89.github.io/ResearchForge-AI/docs/paper.html)
+[![Download PDF](https://img.shields.io/badge/📥_Download-PDF-6c5ce7?style=flat-rounded)](Draft%20-%20Research%20Paper.pdf)
+
 
 **Multi-agent research collaboration platform built with Google Gemini & Agent Development Kit**
 
