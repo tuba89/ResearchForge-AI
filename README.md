@@ -483,7 +483,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📧 Contact
 
 ## 📧 Contact
 **Built by Assia, Ariamehr and Chukwuebuka** for the Agents Intensive Capstone Project
